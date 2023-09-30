@@ -1,1 +1,32 @@
-<p>signin works!</p>
+<div class="container ">
+    <div class="flex flex-wrap gap-1 md:gap-4 xl:gap-8">
+        <div class="flex-column">
+            <div class="text-white text-6xl mx-8 my-8"> 
+                รูปโลโก้    Supercar Care    
+            </div>
+            <div class="conta flex flex-column text-white mx-7 border-round">
+                <div class="flex flex-column gap-2 mx-6 mt-6">
+                    <label htmlFor="email"> Email </label>
+                    <input pInputText id="email" [(ngModel)]="value" />
+                </div>
+                <div class="flex flex-column gap-2 mx-6 mt-6 mb-8">
+                    <label htmlFor="Password "> Password  </label>
+                    <p-password [(ngModel)]="value" [toggleMask]="true"></p-password>
+                </div>
+                <div class="flex overflow-hidden">
+                    <div class="mx-6 mt-6">
+                        <p-button label="Log in" styleClass="p-button-raised p-button-secondary"></p-button>
+                    </div>
+                    <div class="mx-6 mt-6">
+                        <p-button label="Register" styleClass="p-button-raised p-button-secondary"></p-button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="text-white mx-8 my-8 "> 
+            รูป 
+        </div>
+    </div>
+    
+</div>
