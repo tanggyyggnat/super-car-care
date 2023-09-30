@@ -14,6 +14,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PrimeNGModule } from './modules/primeng.module';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { SidebarComponent } from './component/sidebar/sidebar.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     BookingComponent,
     HomeComponent,
     ProgressComponent,
-    TicketComponent
+    TicketComponent,
+    SidebarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
