@@ -26,14 +26,13 @@
             <ng-template pTemplate="body" let-product>
                 <tr>
                     <td>{{ product.booking }}</td>
-                    <td>{{ product.Service }}</td>
-                    <td>{{ product.Date }}</td>
-                    <td>{{ product.Time}}</td>
-                    <td>{{ product.CustomerName}}</td>
-                    <td>{{ product.Carbrand}}</td>
-                    <td>{{ product.CarLicense}}</td>
-                    <td>{{ product.Status}}</td>
-                </tr>
+                    <td>{{ product.service }}</td>
+                    <td>{{ product.date }}</td>
+                    <td>{{ product.time}}</td>
+                    <td>{{ product.customerName}}</td>
+                    <td>{{ product.carbrand}}</td>
+                    <td>{{ product.carLicense}}</td>
+                    <td><p-tag [value]="product.status" [severity]="getSeverity(product.status)"></p-tag></td>
             </ng-template>
         </p-table>
     </div>
