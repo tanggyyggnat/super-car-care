@@ -1,0 +1,20 @@
+<div class="flex">
+    <div class="flex flex-column sidebar">
+        <div class="info flex flex-column justify-content-center align-items-center">
+            <p-avatar 
+                icon="pi pi-user" 
+                size="xlarge" 
+                shape="circle">
+            </p-avatar>
+            <div class="text-3xl text-white mt-3">Tanggy</div>
+            <div class="text-white mt-2">Customer</div>
+        </div>
+        <div class="p-0">
+            <p-menu styleClass="listMenu" [model]="items"></p-menu>
+        </div>
+    </div>
+    <div class="content-container">
+        <ng-content>
+        </ng-content>
+    </div>
+</div>
