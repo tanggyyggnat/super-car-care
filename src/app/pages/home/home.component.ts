@@ -23,16 +23,58 @@ export class HomeComponent implements OnInit {
     this.items = [
       {
         items: [
-          { label: 'New', icon: 'pi pi-plus', url: 'https://primeng.org' },
-          { label: 'Open', icon: 'pi pi-download', routerLink: ['/menu'] },
           {
-            label: 'Recent Files',
-            icon: 'pi pi-download',
+            label: 'Home',
+            icon: 'pi pi-home',
+            routerLink: ['/menu'],
+          },
+          {
+            label: 'Booking',
+            icon: 'pi pi-book',
+            routerLink: ['/menu'],
+          },
+          {
+            label: 'Process',
+            icon: 'pi pi-file',
             routerLink: ['/pagename'],
-            queryParams: { recent: 'true' },
+          },
+          {
+            label: 'History',
+            icon: 'pi pi-history',
+            routerLink: ['/pagename'],
+          },
+          {
+            label: 'Payment',
+            icon: 'pi pi-dollar',
+            routerLink: ['/pagename'],
           },
         ],
       },
+
+      // {
+      //   items: [
+      //     {
+      //       label: 'Home',
+      //       icon: 'pi pi-home',
+      //       routerLink: ['/menu'],
+      //     },
+      //     {
+      //       label: 'Schedule',
+      //       icon: 'pi pi-calendar',
+      //       routerLink: ['/menu'],
+      //     },
+      //     {
+      //       label: 'Inventory',
+      //       icon: 'pi pi-inbox',
+      //       routerLink: ['/pagename'],
+      //     },
+      //     {
+      //       label: 'Reservation',
+      //       icon: 'pi pi-ticket',
+      //       routerLink: ['/pagename'],
+      //     },
+      //   ],
+      // },
     ];
   }
 

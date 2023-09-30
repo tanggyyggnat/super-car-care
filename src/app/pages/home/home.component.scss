@@ -11,22 +11,34 @@
 }
 
 :host ::ng-deep .p-menu .p-menuitem-link .p-menuitem-text {
-  color: #000 !important;
+  color: #000;
 }
 
 :host ::ng-deep .p-menu .p-menuitem-link .p-menuitem-icon {
-  color: #000 !important;
+  color: #000;
+  padding: 1.5rem;
 }
 
 :host ::ng-deep .p-menu .p-submenu-header {
   width: 300px;
-  color: #000 !important;
+  color: #000;
 }
 
 :host ::ng-deep .p-menu {
   width: 300px;
   height: calc(100vh - 220px);
 }
+
+:host ::ng-deep .p-menu .p-menuitem-link:focus {
+  background: #3c3c3c;
+  border-radius: 8px;
+
+  .p-menuitem-icon,
+  .p-menuitem-text {
+    color: white;
+  }
+}
+
 .content-container {
   width: calc(100vw - 300px);
   height: 100vh;
