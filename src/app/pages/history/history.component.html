@@ -1,16 +1,19 @@
 <app-sidebar>
-    <div class="flex justify-content-between p-4 px-4">
-        <div class="text-4xl font-bold"> History </div>
-        <div>
-            <span class="p-input-icon-left">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText placeholder="Search..." />
-            </span>
+    <div class="pt-4 p-3">
+        <div class="flex justify-content-between">
+            <div class="text-4xl font-bold"> History </div>
+            <div>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="Search..." />
+                </span>
+            </div>
         </div>
+        <p-divider></p-divider>
     </div>
 
-    <div class="p-4 px-4">
-        <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+    <div class="px-3">
+        <p-table [value]="products" styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Booking</th>
