@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -8,6 +9,10 @@ import { MenuItem } from 'primeng/api';
 })
 export class SidebarComponent implements OnInit {
   items: MenuItem[] | undefined;
+
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.items = [
@@ -69,6 +74,6 @@ export class SidebarComponent implements OnInit {
   }
 
   signOut() {
-    // Add Sign Out Function
+    this.router.navigate(["/signin"]);
   }
 }
