@@ -5,7 +5,11 @@
   }
 
   .conta {
-    width: 100%;
-    height: 100%;
     background-color: #27282C;
   }
+  :host ::ng-deep .p-password {
+      width: 600px;
+  }
+  :host ::ng-deep .p-inputtext{
+    width: 600px;
+}
