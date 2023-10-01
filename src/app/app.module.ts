@@ -16,6 +16,7 @@ import { PrimeNGModule } from './modules/primeng.module';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FooterComponent } from './component/footer/footer.component';
     ProgressComponent,
     TicketComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

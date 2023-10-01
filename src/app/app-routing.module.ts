@@ -5,6 +5,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { TicketComponent } from './pages/ticket/ticket.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'ticket',
     component: TicketComponent,
+  },
+  {
+    path: 'history',
+    component: HistoryComponent,
   },
 ];
 
