@@ -10,3 +10,12 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+th {
+  background-color: #888888;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
