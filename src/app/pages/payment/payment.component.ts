@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent {
+  mobilebankingMethod = false;
+  cashMethod = false;
+  value: number | undefined;
+
+  selected(method: string) {
+    if (method === 'cash') {
+      this.cashMethod = true;
+      this.mobilebankingMethod = false;
+    } else if (method === 'mobilebanking') {
+      this.cashMethod = false;
+      this.mobilebankingMethod = true;
+    }
+  }
 
 }
+
+
+
+
+
+
+
