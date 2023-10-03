@@ -1,3 +1,66 @@
 <app-sidebar>
-    Booking
+    <div class="text-xl flex justify-content-center py-5">Customer Information</div>
+        <div class="flex justify-content-evenly ">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="username">First Name</label>
+                    <input pInputText id="username" placeholder="Enter Your First Name" />
+            </div>  
+            <div class="flex flex-column gap-2">
+                <label htmlFor="username">Last Name</label>
+                <input pInputText id="username" placeholder="Enter Your First Name" />
+            </div>
+        </div>
+        <div class="flex justify-content-evenly mt-3">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="username">Tel</label>
+                <input pInputText id="username" placeholder="Enter Your Phone Number" />
+            </div>
+            <div class="flex flex-column gap-2">
+                <label htmlFor="username">E-Mail</label>
+                <input pInputText id="username" placeholder="Enter Your Email" />
+            </div>
+        </div>
+        <div class="flex justify-content-evenly mt-3">
+            <div class="flex flex-column gap-2">
+                <label htmlFor="username">Car License</label>
+                <input pInputText id="username" placeholder="Enter Your Car License" />
+            </div>
+            <div class="flex flex-column gap-2">
+                <label htmlFor="username">Car Model</label>
+                <input pInputText id="username" placeholder="Enter Your Car Model" />
+            </div>
+        </div>
+    <div class="text-xl flex flex-row justify-content-evenly pt-5">ข้อมูลการนัดหมายการเข้ารับบริการ</div>
+    <div class="flex justify-content-center mt-3">
+        <div class="flex flex-column gap-2">
+            <label htmlFor="username">Service Types</label>
+            <p-dropdown [options]="typeService" [(ngModel)]="selectedService" optionLabel="name"></p-dropdown>
+        </div>
+    </div>
+    <div class="flex justify-content-center mt-3">
+        <div class="flex flex-column gap-2">
+            <label htmlFor="username">Date Appointment</label>
+            <input class="fullWidth" pInputText />
+        </div>
+    </div>
+    <div class="flex justify-content-center mt-3">
+        <div class="flex flex-column gap-2">
+            <label htmlFor="username">Time Appointment</label>
+            <input class="fullWidth" pInputText />
+        </div>
+    </div>
+    <div class="flex justify-content-center mt-3">
+        <div class="flex flex-column gap-2">
+            <label htmlFor="username">บันทึกรายละเอียดการเข้ารับบริการ</label>
+            <input class="fullWidth" pInputText/>
+        </div>
+    </div>
+    <div class="flex justify-content-center mt-3">
+        <div class="flex flex-column gap-2">
+            <p-button label="Search Your Reservation" 
+                class="p-button-sm"
+                [style]="{width : '800px', background : '#3c3c3c', border: 'none'}">
+            </p-button>
+        </div>
+    </div>
 </app-sidebar>
