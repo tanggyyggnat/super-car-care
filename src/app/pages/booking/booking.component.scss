@@ -1,0 +1,11 @@
+input, .dropdown {
+    width: 300px;
+}
+
+:host ::ng-deep .p-dropdown .p-dropdown-label {
+    width: 750px;
+}
+
+.fullWidth {
+    width: 800px;
+}
