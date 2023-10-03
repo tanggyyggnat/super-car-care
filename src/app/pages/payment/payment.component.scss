@@ -1,13 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@200&family=Inter:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500&display=swap');
 *{
   margin: 0;
   padding: 0;
   outline: none;
-  font-family: 'Inter', sans-serif, 'IBM Plex Sans Thai', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
 }
 
 .barcode{
@@ -16,3 +12,5 @@
 .price{
   font-family: 'Koulen', cursive;
 }
+
+

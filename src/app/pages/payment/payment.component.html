@@ -6,7 +6,7 @@
     <div class="bg-white pt-4 h-8rem">
       <div class="flex flex-row gap-7 justify-content-center align-self-center h-full">
         <!--//MobileBanking-->
-        <div class="bg-white align-self-center border-round-xl flex flex-row ml-3 mr-3 pt-3 pb-3 pl-5 pr-5 w-fit gap-3"
+        <div class="cursor-pointer bg-white align-self-center border-round-xl flex flex-row ml-3 mr-3 pt-3 pb-3 pl-5 pr-5 w-fit gap-3"
            [style]="mobilebankingMethod?'border: 2px solid black':'border: 0.7px solid black'"
            (click)="selected('mobilebanking')">
 
@@ -33,7 +33,7 @@
           </div>
         </div>
         <!--//Cash-->
-        <div class="bg-white align-self-center border-round-xl flex flex-row ml-3 mr-3 pt-3 pb-3 pl-5 pr-5 w-fit gap-3"
+        <div class="cursor-pointer bg-white align-self-center border-round-xl flex flex-row ml-3 mr-3 pt-3 pb-3 pl-5 pr-5 w-fit gap-3"
              [style]="cashMethod?'border: 2px solid black':'border: 0.7px solid black'"
              (click)="selected('cash')">
           <div class="w-3rem h-3rem ">
@@ -42,11 +42,11 @@
 
           <div class="text-left flex flex-column gap-1">
             <div class="w-17rem">
-              <h3>Mobile Banking</h3>
+              <h3>Cash</h3>
             </div>
 
             <div class="w-17rem">
-              <p>Available for KPLUS, SCB Easy</p>
+              <p>Pay by Cash at the Counter Service</p>
             </div>
 
           </div>
@@ -58,7 +58,6 @@
             </svg>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -185,15 +184,15 @@
             <h3>discount</h3>
           </div>
           <div class="w-6rem">
-            <h3 style="font-weight: 300" class="text-right">-0 THB</h3>
+            <h3 class="font-medium text-right">-0 THB</h3>
           </div>
         </div>
       </section>
 
       <section style="width: 70%" class="flex flex-column justify-content-center align-items-end bg-white">
         <div class="text-center flex flex-row gap-6 pr-8">
-          <h1 class="price font-medium">TOTAL DUE</h1>
-          <h1 class="price font-medium">239 THB</h1>
+          <h1 class="price">TOTAL DUE</h1>
+          <h1 class="price">239 THB</h1>
         </div>
       </section>
     </div>
