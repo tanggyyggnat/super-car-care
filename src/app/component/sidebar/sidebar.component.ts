@@ -29,9 +29,9 @@ export class SidebarComponent implements OnInit {
             routerLink: ['/booking'],
           },
           {
-            label: 'Progress',
+            label: 'Process',
             icon: 'pi pi-file',
-            routerLink: ['/progress'],
+            routerLink: ['/process'],
           },
           {
             label: 'History',
