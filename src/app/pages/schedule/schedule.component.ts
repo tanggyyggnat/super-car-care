@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.scss']
+  selector: 'app-schedule',
+  templateUrl: './schedule.component.html',
+  styleUrls: ['./schedule.component.scss']
 })
-export class HistoryComponent {
+export class ScheduleComponent {
   products: any[]=[
     {
       booking:"1",
@@ -37,4 +37,5 @@ export class HistoryComponent {
         return 'warning';
     }
   }
+
 }
