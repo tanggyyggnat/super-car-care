@@ -7,6 +7,7 @@ import { BookingComponent } from './pages/booking/booking.component';
 import { TicketComponent } from './pages/ticket/ticket.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { InventoryComponent } from './pages/inventory/inventory.component';
 
 const routes: Routes = [
   {
@@ -40,7 +41,10 @@ const routes: Routes = [
   {
     path: 'schedule',
     component: ScheduleComponent,
-  },
+  },{
+    path: 'inventory',
+    component: InventoryComponent,
+  }
 ];
 
 @NgModule({

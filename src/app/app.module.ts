@@ -18,6 +18,7 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { InventoryComponent } from './pages/inventory/inventory.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ScheduleComponent } from './pages/schedule/schedule.component';
     SidebarComponent,
     FooterComponent,
     HistoryComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,
