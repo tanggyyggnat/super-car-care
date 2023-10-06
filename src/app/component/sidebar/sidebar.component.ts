@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { PrimeNGModule } from 'src/app/modules/primeng.module';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
+  standalone : true,
+  imports: [
+    PrimeNGModule,
+  ]
 })
 export class SidebarComponent implements OnInit {
   items: MenuItem[] | undefined;
@@ -29,19 +34,9 @@ export class SidebarComponent implements OnInit {
             routerLink: ['/booking'],
           },
           {
-            label: 'Progress',
-            icon: 'pi pi-file',
-            routerLink: ['/progress'],
-          },
-          {
             label: 'History',
             icon: 'pi pi-history',
             routerLink: ['/history'],
-          },
-          {
-            label: 'Payment',
-            icon: 'pi pi-dollar',
-            routerLink: ['/payment'],
           },
         ],
       },

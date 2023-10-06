@@ -13,7 +13,10 @@
     </div>
 
     <div class="px-3">
-        <p-table [value]="products" styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }">
+        <p-table [value]="products"
+        selectionMode="single" 
+        (onRowSelect)="onRowSelect($event)"
+        styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Booking</th>
@@ -27,7 +30,7 @@
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-product>
-                <tr>
+                <tr [pSelectableRow]="product">
                     <td>{{ product.booking }}</td>
                     <td>{{ product.service }}</td>
                     <td>{{ product.date }}</td>
