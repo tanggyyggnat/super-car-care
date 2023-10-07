@@ -1,7 +1,22 @@
 .sidebar {
+  position: fixed;
   width: 300px;
   height: 100vh;
 }
+
+
+.content-container {
+  margin-left: 300px;
+  width: calc(100vw - 300px);
+  min-height: 100vh;
+  overflow: auto;
+  background-color: #dfe2eb;
+}
+
+.customButton {
+  background-color: #3c3c3c;
+}
+
 
 .info {
   padding: 0;
@@ -20,13 +35,12 @@
 }
 
 :host ::ng-deep .p-menu .p-submenu-header {
-  width: 300px;
   color: #000;
 }
 
 :host ::ng-deep .p-menu {
   width: 300px;
-  height: calc(100vh - 220px);
+  height: calc(100vh - 250px);
 }
 
 :host ::ng-deep .p-menu .p-menuitem-link:focus {
@@ -47,14 +61,4 @@
   .p-menuitem-text {
     color: white;
   }
-}
-
-.content-container {
-  width: calc(100vw - 300px);
-  height: 100vh;
-  background-color: #dfe2eb;
-}
-
-.customButton {
-  background-color: #3c3c3c;
 }
