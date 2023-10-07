@@ -18,3 +18,4 @@ describe('PaymentComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
