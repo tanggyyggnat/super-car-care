@@ -1,33 +1,47 @@
-<div class="container ">
-    <div class="flex flex-wrap gap-1 md:gap-4 xl:gap-8">
-        <div class="flex-column">
-            <div class="text-white text-6xl mx-8 my-8"> 
-                <p-image src="/src/assets/logonobg.png" alt="Image" width="250"></p-image>    Supercar Care    
-            </div>
-            <div class="conta flex flex-column text-white mx-7 border-round">
-                <div class="flex flex-column gap-2 mx-6 mt-6">
-                    <label htmlFor="email"> Email </label>
-                    <input pInputText id="email" [(ngModel)]="value" />
-                </div>
-                <div class="flex flex-column gap-2 mx-6 mt-6 mb-8">
-                    <label htmlFor="Password "> Password  </label>
-                    <p-password [(ngModel)]="value" [toggleMask]="true"></p-password>
-                </div>
-                <div class="flex overflow-hidden">
-                    <div class="mx-6 mt-6">
-                        <p-button label="Log in" styleClass="p-button-raised p-button-secondary"></p-button>
-                    </div>
-                    <div class="mx-6 mt-6 mb-5">
-                        <p-button label="Register" styleClass="p-button-raised p-button-secondary"></p-button>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        <div class="text-white mx-8 my-8 "> 
-            
-<p-image src="/src/assets/carsignin.png" alt="Image" width="250"></p-image>
-        </div>
-    </div> 
-    
+<!--<body>-->
+<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; background-color: rgb(0,0,0); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+  <video autoplay muted loop playsinline preload="auto" poster="poster.jpg" style="object-fit: cover; width: 100%; height: 100%;">
+    <source src="https://lucidmotors.com/s3fs-public/2022-11/lucid-air-future-models-0-header.mp4" type="video/mp4">
+  </video>
 </div>
+
+
+<div class="container fixed gap-0">
+  <div class="img">
+    <div class="border-noround-right border-right-none border-white  border-round-3xl" style="border: 0.2px white solid; background: url('https://lucidmotors.com/s3fs-public/2022-11/lucid-air-future-models-2-back.webp') right / cover no-repeat; width: 100%; height: 100%;"></div>
+  </div>
+
+  <div style="border: 0.2px white solid; background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);background: linear-gradient(rgba(0,0,0,0), rgba(255,255,255,0));" class="login-content flex flex-wrap justify-content-center border-left-none border-noround-left border-round-3xl border-white">
+      <form>
+        <div class="flex flex-row align-items-center justify-content-center gap-3 pb-3">
+          <img class="h-3rem" src="./assets/logo.png">
+          <h2 class="text-white title text-2xl">Super car care</h2>
+        </div>
+
+        <section class="flex flex-column gap-1">
+          <div class="input-div">
+            <div class="div flex flex-column gap-2">
+              <label  class="text-white"> Username  </label>
+              <input class="p-inputtext " pInputText type="text" id="username" [(ngModel)]="value" />
+            </div>
+          </div>
+          <div class="input-div">
+            <div class="div flex flex-column gap-2">
+              <label class="text-white" htmlFor="Password "> Password  </label>
+              <p-password [(ngModel)]="value" [toggleMask]="true"></p-password>
+            </div>
+          </div>
+        </section>
+        <div class="pt-8">
+          <input type="submit" class="btn" value="Login">
+          <div class="flex flex-row justify-content-center gap-1">
+            <p class="text-white text-sm">Don't Have an Account?</p>
+            <p routerLink="/signup" class="text-white text-sm underline cursor-pointer">sign up</p>
+          </div>
+        </div>
+
+      </form>
+    </div>
+</div>
+
+<!--<script type="text/javascript" src="js/main.js"></script>-->
