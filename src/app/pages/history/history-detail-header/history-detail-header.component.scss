@@ -1,0 +1,27 @@
+.step-container {
+    width: 60%;
+}
+
+:host ::ng-deep .p-steps .p-steps-item:before {
+    border-color: #5CB66B;
+}
+
+:host ::ng-deep .p-steps .p-steps-item .p-menuitem-link .p-steps-number {
+    color: #5CB66B;
+    border: 1px solid #e9ecef;
+    background: #5CB66B;
+    min-width: 4rem;
+    height: 4rem;
+    line-height: 2rem;
+    font-size: 1.143rem;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+:host ::ng-deep .p-steps .p-steps-item .p-menuitem-link .p-steps-title:hover {
+    cursor: pointer;
+}
+
+:host ::ng-deep .p-steps-number:hover {
+    cursor: pointer;
+}

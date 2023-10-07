@@ -1,0 +1,70 @@
+<div class="py-5 shadow-2">
+  <div class="grid">
+    <div class="col-3">
+      <div class="flex justify-content-center">
+        <div class="avatar">
+          <img src="https://www.w3schools.com/howto/img_avatar.png" style="border-radius: 50%;" width="150px"
+            height="150px">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-9">
+      <div class="text-xl font-bold"> {{ customer.customerName }} </div>
+      <div class="grid mt-3">
+        <div class="col-6">
+          <div>
+            Customer Information
+          </div>
+          <div class="flex mt-2 text-gray-600">
+            <div>Phone : </div>
+            <div class="ml-2">
+              {{ customer.customerPhone }}
+            </div>
+          </div>
+          <div class="flex mt-2 text-gray-600">
+            <div>Email : </div>
+            <div class="ml-2">
+              {{ customer.customerEmail }}
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-6">
+          <div>
+            Service Information
+          </div>
+          <div class="flex mt-2 text-gray-600">
+            <div>Car Info : </div>
+            <div class="ml-2">
+              {{ customer.carbrand }} {{ customer.carLicense }}
+            </div>
+          </div>
+          <div class="flex mt-2 text-gray-600">
+            <div>Booking Date : </div>
+            <div class="ml-2">
+              {{ customer.time }} {{ customer.date }}
+            </div>
+          </div>
+          <div class="flex mt-2 text-gray-600">
+            <div>Service Type : </div>
+            <div class="ml-2">
+              {{ customer.serviceType }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="flex justify-content-center mt-5">
+  <div class="step-container">
+    <p-steps [model]="step" [readonly]="false" (activeIndexChange)="changeIndex($event)"></p-steps>
+  </div>
+</div>
+
+<div class="px-3">
+  <p-divider></p-divider>
+</div>
