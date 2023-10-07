@@ -19,8 +19,8 @@ export class PaymentComponent {
       this.mobilebankingMethod = true;
     }
   }
-
 }
+// test
 
 
 
