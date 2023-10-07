@@ -19,6 +19,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
+import { StockComponent } from './pages/stock/stock.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { InventoryComponent } from './pages/inventory/inventory.component';
     FooterComponent,
     HistoryComponent,
     ScheduleComponent,
-    InventoryComponent
+    InventoryComponent,
+    ReservationComponent,
+    StockComponent
   ],
   imports: [
     BrowserModule,

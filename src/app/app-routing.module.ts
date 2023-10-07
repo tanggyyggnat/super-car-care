@@ -8,6 +8,8 @@ import { TicketComponent } from './pages/ticket/ticket.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
+import { StockComponent } from './pages/stock/stock.component';
 
 const routes: Routes = [
   {
@@ -44,6 +46,12 @@ const routes: Routes = [
   },{
     path: 'inventory',
     component: InventoryComponent,
+  },{
+    path: 'reservation',
+    component: ReservationComponent
+  },{
+    path: 'stock',
+    component: StockComponent
   }
 ];
 
