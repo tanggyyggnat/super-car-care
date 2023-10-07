@@ -1,0 +1,33 @@
+<p-tabView [(activeIndex)]="activeIndex">
+  <p-tabPanel>
+    <ng-template pTemplate="header">
+      <i class="pi pi-clock mr-2"></i>
+      <span>Check In</span>
+    </ng-template>
+    <tab-check-in></tab-check-in>
+  </p-tabPanel>
+
+  <p-tabPanel>
+    <ng-template pTemplate="header">
+      <i class="pi pi-list mr-2"></i>
+      <span>Process</span>
+    </ng-template>
+    <tab-process></tab-process>
+  </p-tabPanel>
+
+  <p-tabPanel>
+    <ng-template pTemplate="header">
+      <i class="pi pi-dollar mr-2"></i>
+      <span>Payment</span>
+    </ng-template>
+    <tab-payment></tab-payment>
+  </p-tabPanel>
+  
+  <p-tabPanel>
+    <ng-template pTemplate="header">
+      <i class="pi pi-check mr-2"></i>
+      <span>Check Out</span>
+    </ng-template>
+    <tab-check-out></tab-check-out>
+  </p-tabPanel>
+</p-tabView>
