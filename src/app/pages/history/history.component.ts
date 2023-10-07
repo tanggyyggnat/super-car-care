@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import data from 'src/app/mockup/customer.json';
 
 @Component({
   selector: 'app-history',
@@ -8,32 +9,14 @@ import { Router } from '@angular/router';
 })
 export class HistoryComponent {
 
+  products: any[] = [];
+
   constructor(
     private router: Router,
-  ) { }
+  ) {
+    this.products = data
+  }
 
-  products: any[] = [
-    {
-      booking: "1",
-      service: "washingcar",
-      date: "10/1/2023",
-      time: "2:34 AM",
-      customerName: "Aimakase",
-      carbrand: "chocolate",
-      carLicense: "ai123",
-      status: "success"
-    },
-    {
-      booking: "2",
-      service: "machanic",
-      date: "10/2/2023",
-      time: "12:34 AM",
-      customerName: "Tanggy",
-      carbrand: "strawberry",
-      carLicense: "tang789",
-      status: "in process"
-    }
-  ];
 
   getSeverity(status: string): any {
     switch (status) {
@@ -45,6 +28,6 @@ export class HistoryComponent {
   }
 
   onRowSelect(event: any) {
-    this.router.navigate(['history/detail', event.data.booking]);
+    this.router.navigate(['history/detail', event.data.id]);
   }
 }

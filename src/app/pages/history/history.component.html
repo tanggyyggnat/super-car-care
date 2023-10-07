@@ -31,8 +31,8 @@
             </ng-template>
             <ng-template pTemplate="body" let-product>
                 <tr [pSelectableRow]="product">
-                    <td>{{ product.booking }}</td>
-                    <td>{{ product.service }}</td>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.serviceType }}</td>
                     <td>{{ product.date }}</td>
                     <td>{{ product.time}}</td>
                     <td>{{ product.customerName}}</td>
