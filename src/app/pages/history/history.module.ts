@@ -6,6 +6,8 @@ import { SidebarComponent } from 'src/app/component/sidebar/sidebar.component';
 import { PrimeNGModule } from 'src/app/modules/primeng.module';
 import { HistoryComponent } from './history.component';
 import { HistoryDetailComponent } from './history-detail/history-detail.component';
+import { HistoryDetailHeaderComponent } from './history-detail-header/history-detail-header.component';
+import { HistoryDetailTabComponent } from './history-detail-tab/history-detail-tab.component';
 
 const routes: Routes = [
   {
@@ -22,7 +24,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     HistoryComponent,
-    HistoryDetailComponent
+    HistoryDetailComponent,
+
   ],
   imports: [
     CommonModule,
@@ -31,6 +34,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     PrimeNGModule,
     SidebarComponent,
+    HistoryDetailHeaderComponent,
+    HistoryDetailTabComponent,
   ]
 })
 export class HistoryModule { }
