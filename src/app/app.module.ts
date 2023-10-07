@@ -8,7 +8,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { HomeComponent } from './pages/home/home.component';
-import { HistoryComponent } from './pages/history/history.component';
+import { ProgressComponent } from './pages/progress/progress.component';
 import { TicketComponent } from './pages/ticket/ticket.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,9 +16,9 @@ import { PrimeNGModule } from './modules/primeng.module';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { FooterComponent } from './component/footer/footer.component';
-import { ProcessComponent } from './pages/process/process.component';
-import { ReservationComponent } from './pages/reservation/reservation.component';
-import { PaymentComponent } from './pages/payment/payment.component';
+import { HistoryComponent } from './pages/history/history.component';
+import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { InventoryComponent } from './pages/inventory/inventory.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +27,13 @@ import { PaymentComponent } from './pages/payment/payment.component';
     SignupComponent,
     BookingComponent,
     HomeComponent,
-    HistoryComponent,
+    ProgressComponent,
     TicketComponent,
     SidebarComponent,
     FooterComponent,
-    ProcessComponent,
-    ReservationComponent,
-    PaymentComponent
+    HistoryComponent,
+    ScheduleComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,

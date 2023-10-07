@@ -4,12 +4,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { BookingComponent } from './pages/booking/booking.component';
-import { HistoryComponent } from './pages/history/history.component';
 import { TicketComponent } from './pages/ticket/ticket.component';
-
-import { ProcessComponent } from './pages/process/process.component';
-import { PaymentComponent } from './pages/payment/payment.component';
-import { ReservationComponent } from './pages/reservation/reservation.component';
+import { HistoryComponent } from './pages/history/history.component';
+import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { InventoryComponent } from './pages/inventory/inventory.component';
 
 const routes: Routes = [
   {
@@ -33,25 +31,20 @@ const routes: Routes = [
     component: BookingComponent,
   },
   {
-    path: 'history',
-    component: HistoryComponent,
-  },
-  {
     path: 'ticket',
     component: TicketComponent,
   },
   {
-    path: 'process',
-    component: ProcessComponent,
+    path: 'history',
+    component: HistoryComponent,
   },
   {
-    path: 'payment',
-    component: PaymentComponent,
-  },
-  {
-    path: 'reservation',
-    component: ReservationComponent,
-  },
+    path: 'schedule',
+    component: ScheduleComponent,
+  },{
+    path: 'inventory',
+    component: InventoryComponent,
+  }
 ];
 
 @NgModule({
