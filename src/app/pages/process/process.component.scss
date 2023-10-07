@@ -7,3 +7,14 @@
   outline: none;
   font-family: 'Inter', sans-serif, 'IBM Plex Sans Thai', sans-serif;
 }
+
+
+:host ::ng-deep .p-timeline-event-opposite, .p-timeline-event-content {
+  flex: none;
+  padding: 2rem;
+}
+
+////:host ::ng-deep .p-password {
+////  width: 360px;
+////  cursor: pointer;
+////}

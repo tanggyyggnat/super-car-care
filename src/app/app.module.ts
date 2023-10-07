@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ProgressComponent } from './pages/progress/progress.component';
 import { TicketComponent } from './pages/ticket/ticket.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,6 +14,9 @@ import { PrimeNGModule } from './modules/primeng.module';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { FooterComponent } from './component/footer/footer.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
+import { HistoryComponent } from './pages/history/history.component';
+import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { InventoryComponent } from './pages/inventory/inventory.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,11 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
     SigninComponent,
     SignupComponent,
     HomeComponent,
-    ProgressComponent,
     TicketComponent,
     FooterComponent,
+    HistoryComponent,
+    ScheduleComponent,
+    InventoryComponent
   ],
   imports: [
     SidebarComponent,

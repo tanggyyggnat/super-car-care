@@ -1,0 +1,39 @@
+<app-sidebar>
+    <div class="flex justify-content-between p-4 px-4">
+        <div class="text-4xl font-bold"> Tanggy's Work </div>
+        <div>
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input type="text" pInputText placeholder="Search..." />
+            </span>
+        </div>
+    </div>
+
+    <div class="p-4 px-4">
+        <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Booking</th>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Customer Name</th>
+                    <th>Car brand</th>
+                    <th>Car License</th>
+                    <th>Status</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr>
+                    <td>{{ product.booking }}</td>
+                    <td>{{ product.service }}</td>
+                    <td>{{ product.date }}</td>
+                    <td>{{ product.time}}</td>
+                    <td>{{ product.customerName}}</td>
+                    <td>{{ product.carbrand}}</td>
+                    <td>{{ product.carLicense}}</td>
+                    <td><p-tag [value]="product.status" [severity]="getSeverity(product.status)"></p-tag></td>
+            </ng-template>
+        </p-table>
+    </div>
+</app-sidebar>

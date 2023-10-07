@@ -5,8 +5,8 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { TicketComponent } from './pages/ticket/ticket.component';
 import { HistoryComponent } from './pages/history/history.component';
-import { ProgressComponent } from './pages/progress/progress.component';
-import { PaymentComponent } from './pages/payment/payment.component';
+import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { InventoryComponent } from './pages/inventory/inventory.component';
 
 const routes: Routes = [
   {
@@ -35,16 +35,15 @@ const routes: Routes = [
   // },
   {
     path: 'history',
-    loadChildren: () => import('./pages/history/history.module').then(m => m.HistoryModule),
+    component: HistoryComponent,
   },
-  // {
-  //   path: 'progress',
-  //   component: ProgressComponent,
-  // },
-  // {
-  //   path: 'payment',
-  //   component: PaymentComponent,
-  // },
+  {
+    path: 'schedule',
+    component: ScheduleComponent,
+  },{
+    path: 'inventory',
+    component: InventoryComponent,
+  }
 ];
 
 @NgModule({

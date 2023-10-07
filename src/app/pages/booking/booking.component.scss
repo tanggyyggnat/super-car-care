@@ -6,6 +6,20 @@ input, .dropdown {
     width: 750px;
 }
 
+:host ::ng-deep .p-calendar .p-inputtext {
+  flex: 1 1 auto;
+  width: 800px;
+}
+
+:host ::ng-deep .p-calendar .p-datepicker {
+  min-width: 50%;
+}
+
 .fullWidth {
     width: 800px;
+}
+
+
+label{
+  font-size: 0.9em;
 }
