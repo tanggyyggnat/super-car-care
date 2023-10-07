@@ -1,3 +1,18 @@
 <app-sidebar>
-    <p>history-detail works!</p>
+  <div class="py-3">
+    <p-breadcrumb class="max-w-full" [model]="items"></p-breadcrumb>
+    <div class="px-3 -mt-2">
+      <p-divider></p-divider>
+    </div>
+  </div>
+
+  <div class="mx-3 -mt-3">
+    <history-detail-header [customer]="customer" (OnchangeIndex)="changeIndex($event)">
+    </history-detail-header>
+  </div>
+
+  <div class="mx-3 px-3">
+    <history-detail-tab [activeIndex]="activeIndex">
+    </history-detail-tab>
+  </div>
 </app-sidebar>
