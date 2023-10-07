@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "customerName": "Aimakase",
+        "customerPhone": "089-123-4567",
+        "customerEmail": "Aimakase@gmail.com",
+        "carbrand": "chocolate",
+        "carLicense": "ai123",
+        "serviceType": "washingcar",
+        "date": "10/1/2023",
+        "time": "2:34 AM",
+        "status": "success"
+    },
+    {
+        "id": "2",
+        "customerName": "Tanggy",
+        "customerPhone": "089-123-7654",
+        "customerEmail": "Tanggy@gmail.com",
+        "carbrand": "strawberry",
+        "carLicense": "tang789",
+        "serviceType": "machanic",
+        "date": "10/2/2023",
+        "time": "12:34 AM",
+        "status": "in process"
+    }
+]
