@@ -130,4 +130,5 @@ let modules = [
     ...modules
   ]
 })
+
 export class PrimeNGModule { }

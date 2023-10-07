@@ -1,5 +1,36 @@
 <app-sidebar> 
-    <div class="contanner">
-        
+    <div class="text-4xl font-bold px-6 py-5"> Home </div>
+    <div class="grid heightCustom">
+        <div class="col-7 ml-6">
+            <div class="bg-white shadow-2 border-round-sm h-full">
+                <p class="text-2xl px-2 my-3 "> Reward Cards</p>
+
+                <div class="card flex justify-content-center">
+                    <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+                </div>
+                <p class="text-base text-right "> 9/10 times</p>
+                <p class="text-base text-center mx-8">ใช้บริการล้างรถครบ 10 ครั้งฟรี 1 ครั้ง </p>
+            </div>
+        </div>
+        <div class="col-3 flex flex-column align-content-between justify-content-between">
+            <div>
+                <p-card>
+                    <p class="text-xl  my-3"> Car Wash </p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque at, itaque esse blanditiis enim
+                </p-card>
+            </div>
+            <div>
+                <p-card>
+                    <p class="text-xl  my-3"> Car maintenance</p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque at, itaque esse blanditiis enim
+                </p-card>
+            </div>
+            <div>
+                <p-card>
+                    <p class="text-xl  my-3"> Car Check Up </p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque at, itaque esse blanditiis enim
+                </p-card>
+            </div>
+        </div>
     </div>
 </app-sidebar>
