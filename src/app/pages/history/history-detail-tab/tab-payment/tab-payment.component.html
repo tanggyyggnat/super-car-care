@@ -1,1 +1,190 @@
-<p>tab-payment works!</p>
+<div class="border-round-lg shadow-2 p-3 mb-3">
+  <h1 class="text-2xl font-bold text-center mt-2 mb-5">Choose payment method</h1>
+  <div class="flex justify-content-evenly mb-3">
+    <p-card (click)="selected('BANKING')">
+      <div class="flex">
+        <div class="mr-4">
+          <svg width="48" height="100%" viewBox="0 0 48 48" fill="none">
+            <path
+              d="M40 10H8C5.79086 10 4 11.7909 4 14V34C4 36.2091 5.79086 38 8 38H40C42.2091 38 44 36.2091 44 34V14C44 11.7909 42.2091 10 40 10Z"
+              stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              [style.stroke]="mobilebankingMethod ? 'green' : 'gray'" />
+            <path d="M4 20H44" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              [style.stroke]="mobilebankingMethod ? 'green' : 'gray'" />
+          </svg>
+        </div>
+
+        <div class="text-left flex flex-column">
+          <div class="w-17rem">
+            <h3 class="p-0 m-0" [class.selected]="mobilebankingMethod" [class.unselected]="!mobilebankingMethod">Mobile
+              Banking</h3>
+          </div>
+          <div class="w-17rem">
+            <p class=" p-0 m-0 mt-2" [class.selected]="mobilebankingMethod" [class.unselected]="!mobilebankingMethod">
+              Available for KPLUS, SCB
+              Easy</p>
+          </div>
+        </div>
+
+        <div [hidden]="!mobilebankingMethod">
+          <svg width="28" height="100%" viewBox="0 0 28 28" fill="none">
+            <g>
+              <path
+                d="M14.0002 25.6663C20.4437 25.6663 25.6668 20.4432 25.6668 13.9997C25.6668 7.55618 20.4437 2.33301 14.0002 2.33301C7.55666 2.33301 2.3335 7.55618 2.3335 13.9997C2.3335 20.4432 7.55666 25.6663 14.0002 25.6663Z"
+                stroke="green" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M9 16.3333L12.6667 19.3333L18.6667 10" stroke="green" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath>
+                <rect width="28" height="28" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </p-card>
+
+    <p-card (click)="selected('CASH')">
+      <div class="flex">
+        <div class="mr-4">
+          <svg width="48" height="100%" viewBox="0 0 48 48" fill="none">
+            <path
+              d="M40 10H8C5.79086 10 4 11.7909 4 14V34C4 36.2091 5.79086 38 8 38H40C42.2091 38 44 36.2091 44 34V14C44 11.7909 42.2091 10 40 10Z"
+              stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              [style.stroke]="cashMethod ? 'green' : 'gray'" />
+            <path d="M4.17383 29.8867C12.5217 29.8867 12.5217 32.2156 12.5217 38.0377" stroke="gray" stroke-width="2"
+              [style.stroke]="cashMethod ? 'green' : 'gray'" />
+            <path d="M4.17383 18.1133C12.5217 18.1133 12.5217 15.7844 12.5217 9.96234" stroke="gray" stroke-width="2"
+              [style.stroke]="cashMethod ? 'green' : 'gray'" />
+            <path d="M24.522 16.0757V31.9247" stroke="gray" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" [style.stroke]="cashMethod ? 'green' : 'gray'" />
+            <path
+              d="M29.0869 18.4531H22.2391C21.3916 18.4531 20.5787 18.7453 19.9794 19.2655C19.3801 19.7856 19.0435 20.4911 19.0435 21.2267C19.0435 21.9623 19.3801 22.6678 19.9794 23.1879C20.5787 23.7081 21.3916 24.0003 22.2391 24.0003H26.8043C27.6519 24.0003 28.4647 24.2925 29.064 24.8127C29.6633 25.3328 30 26.0383 30 26.7739C30 27.5095 29.6633 28.215 29.064 28.7351C28.4647 29.2552 27.6519 29.5475 26.8043 29.5475H19.0435"
+              stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              [style.stroke]="cashMethod ? 'green' : 'gray'" />
+            <path d="M44.8696 29.8867C36.5218 29.8867 36.5218 32.2156 36.5218 38.0377" stroke="gray" stroke-width="2"
+              [style.stroke]="cashMethod ? 'green' : 'gray'" />
+            <path d="M42.7827 16.3018C36.5218 16.3018 36.5218 14.4904 36.5218 9.96214" stroke="gray" stroke-width="2"
+              [style.stroke]="cashMethod ? 'green' : 'gray'" />
+          </svg>
+        </div>
+
+        <div class="text-left flex flex-column gap-1">
+          <div class="w-17rem">
+            <h3 class="p-0 m-0" [class.selected]="cashMethod" [class.unselected]="!cashMethod">Cash</h3>
+          </div>
+          <div class="w-17rem">
+            <p class="p-0 m-0 mt-2" [class.selected]="cashMethod" [class.unselected]="!cashMethod">Pay by Cash at the
+              Counter Service</p>
+          </div>
+        </div>
+
+        <div [hidden]="!cashMethod">
+          <svg width="28" height="100%" viewBox="0 0 28 28" fill="none">
+            <g>
+              <path
+                d="M14.0002 25.6663C20.4437 25.6663 25.6668 20.4432 25.6668 13.9997C25.6668 7.55618 20.4437 2.33301 14.0002 2.33301C7.55666 2.33301 2.3335 7.55618 2.3335 13.9997C2.3335 20.4432 7.55666 25.6663 14.0002 25.6663Z"
+                stroke="green" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M9 16.3333L12.6667 19.3333L18.6667 10" stroke="green" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath>
+                <rect width="28" height="28" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </p-card>
+  </div>
+</div>
+
+
+<div class="border-round-lg shadow-2 p-3">
+  <ng-container *ngIf="!mobilebankingMethod && !cashMethod">
+    <div class="particle flex flex-column justify-content-center align-items-center">
+      <img src="../../../assets/payment.png" height="200" width="200">
+      <h3 class="text-gray-500">Your payment method needs to be selected.</h3>
+      <h3 class="text-gray-500">before you can proceed.</h3>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="mobilebankingMethod">
+    <div class="grid py-5">
+      <div class="col-6">
+        <div class="mx-7">
+          <div class="mb-5">
+            <div class="text-xl font-bold mb-2">Fill in Payment Information</div>
+            <div class="mb-2">
+              <input type="text" class="w-full" placeholder="Bank Account" pInputText>
+            </div>
+            <div class="mb-2">
+              <input type="text" class="w-full" placeholder="Bank Name" pInputText>
+            </div>
+            <div>
+              <input type="text" class="w-full" placeholder="Slip" pInputText>
+            </div>
+          </div>
+          <div>
+            <div class="text-xl font-bold mb-2">Payment details</div>
+            <div class="mb-2">Service Type :Car check up Service</div>
+            <div class="mb-2">Start Date : 09:00 AM 23/11/2023</div>
+            <div>Finish Date : 12:00 AM 23/11/2023 </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 flex justify-content-center align-items-center">
+        <img src="../../../assets/QR.png" alt="QR Code" height="300" width="250">
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="cashMethod">
+    <div class="grid py-5">
+      <div class="col-6">
+        <div class="mx-7">
+          <div>
+            <div class="text-xl font-bold mb-2">Payment details</div>
+            <div class="mb-2">Service Type :Car check up Service</div>
+            <div class="mb-2">Start Date : 09:00 AM 23/11/2023</div>
+            <div>Finish Date : 12:00 AM 23/11/2023 </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mx-7">
+          <div class="text-xl font-bold mb-2">Pay at the Counter</div>
+          <div class="border-round-lg shadow-2 p-3">
+            <div class="text-base text-center mb-3">
+              Super car care Co., Ltd.
+            </div>
+            <div class="text-center text-5xl barcode">
+              100023313220133
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<ng-container *ngIf="cashMethod || mobilebankingMethod">
+  <div class="border-round-lg shadow-2 p-3 mt-3 px-6">
+    <div class="flex justify-content-between">
+      <div class="mt-3">
+        <div>
+          <div class="text-lg mb-2">Total : 500 THB</div>
+          <div class="text-lg">Discount : 0 THB</div>
+        </div>
+      </div>
+      <div class="flex align-items-center text-xl font-bold">Net Total : 500 THB</div>
+    </div>
+    <div class="w-full">
+      <p-divider></p-divider>
+      <button class="p-button-secondary p-button-sm w-full" label="Pay Now" pButton>
+      </button>
+    </div>
+  </div>
+</ng-container>

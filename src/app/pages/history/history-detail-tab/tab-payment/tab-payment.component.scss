@@ -1,0 +1,33 @@
+input {
+  padding: 0.5rem 1rem;
+}
+
+.barcode {
+  font-family: 'Libre Barcode 39', sans-serif;
+}
+
+.price {
+  font-family: 'Koulen', cursive;
+}
+
+.particle {
+  height: 450px;
+}
+
+:host ::ng-deep .p-card {
+  cursor: pointer;
+  color: #000;
+  width: 430px;
+}
+
+:host ::ng-deep .p-card .p-card-content {
+  padding: 0;
+}
+
+.selected {
+  color: green;
+}
+
+.unselected {
+  color: gray;
+}
