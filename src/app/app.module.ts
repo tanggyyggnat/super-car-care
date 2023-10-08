@@ -14,9 +14,9 @@ import { PrimeNGModule } from './modules/primeng.module';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { FooterComponent } from './component/footer/footer.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
-import { HistoryComponent } from './pages/history/history.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
+import { TabPaymentComponent } from './pages/history/history-detail-tab/tab-payment/tab-payment.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +26,8 @@ import { InventoryComponent } from './pages/inventory/inventory.component';
     HomeComponent,
     TicketComponent,
     FooterComponent,
-    HistoryComponent,
     ScheduleComponent,
-    InventoryComponent
+    InventoryComponent,
   ],
   imports: [
     SidebarComponent,
