@@ -34,8 +34,9 @@
   padding: 0.5rem;
 }
 
-:host ::ng-deep .p-menu .p-submenu-header {
+:host ::ng-deep .p-menu .p-submenu-header{
   color: #000;
+  margin-left: -10px;
 }
 
 :host ::ng-deep .p-menu {
