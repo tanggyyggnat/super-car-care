@@ -26,7 +26,14 @@ export class ScheduleComponent {
       carbrand:"Toyota",
       carLicense:"tang789",
       status:"in process"
-    }
+    },
+    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
+    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"pending"},
+    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
+    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
+    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
+    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
+    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"}
   ];
 
   getSeverity(status: string):any {
@@ -35,6 +42,8 @@ export class ScheduleComponent {
         return 'success';
       case 'in process':
         return 'warning';
+      case 'pending':
+        return 'danger';
     }
   }
 
