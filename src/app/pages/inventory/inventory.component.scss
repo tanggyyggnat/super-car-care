@@ -1,3 +1,45 @@
 :host ::ng-deep  .p-datatable>.p-datatable-wrapper {
-    padding-bottom: 100px;
+    padding-bottom: 5rem;
 }
+
+
+:host ::ng-deep .p-dialog{
+  background: white;
+  gap: 1rem;
+}
+:host ::ng-deep .p-dialog .p-dialog-header {
+  background: #4B527E;
+  color: white;
+}
+:host ::ng-deep .p-dialog .p-dialog-header svg{
+  fill: white;
+  color: white;
+}
+:host ::ng-deep .p-dialog .p-dialog-content:last-of-type {
+  padding-bottom: 1rem;
+}
+
+tr{
+}
+thead{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.09) 0px 3px 7px -3px;
+}
+
+th{
+  text-align: center !important;
+  color: white;
+  background: #4B527E;
+}
+
+.table-header{
+  padding: 10px;
+  padding-bottom: 5px;
+}
+
+td{
+  text-align: center !important;
+  padding: 3px;
+  padding-top: 15px;
+  border-bottom: #BEBEBE 0.5px solid;
+}
+
