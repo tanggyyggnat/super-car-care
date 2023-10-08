@@ -7,7 +7,7 @@ import { PrimeNGModule } from 'src/app/modules/primeng.module';
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  standalone : true,
+  standalone: true,
   imports: [
     PrimeNGModule,
   ]
@@ -22,6 +22,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
     this.items = [
       {
+        label: 'Customer',
         items: [
           {
             label: 'Home',
@@ -41,30 +42,31 @@ export class SidebarComponent implements OnInit {
         ],
       },
 
-      // {
-      //   items: [
-      //     {
-      //       label: 'Home',
-      //       icon: 'pi pi-home',
-      //       routerLink: ['/menu'],
-      //     },
-      //     {
-      //       label: 'Schedule',
-      //       icon: 'pi pi-calendar',
-      //       routerLink: ['/schedule'],
-      //     },
-      //     {
-      //       label: 'Inventory',
-      //       icon: 'pi pi-inbox',
-      //       routerLink: ['/inventory'],
-      //     },
-      //     {
-      //       label: 'Reservation',
-      //       icon: 'pi pi-ticket',
-      //       routerLink: ['/reservation'],
-      //     },
-      //   ],
-      // },
+      {
+        label: 'Employee',
+        items: [
+          {
+            label: 'Home',
+            icon: 'pi pi-home',
+            routerLink: ['/home'],
+          },
+          {
+            label: 'Schedule',
+            icon: 'pi pi-calendar',
+            routerLink: ['/schedule'],
+          },
+          {
+            label: 'Inventory',
+            icon: 'pi pi-inbox',
+            routerLink: ['/inventory'],
+          },
+          {
+            label: 'Reservation',
+            icon: 'pi pi-ticket',
+            routerLink: ['/reservation'],
+          },
+        ],
+      },
     ];
   }
 
