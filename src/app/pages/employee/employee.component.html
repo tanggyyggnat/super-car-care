@@ -1,0 +1,96 @@
+
+<app-sidebar>
+<!--  //Header-->
+  <section class="printable overflow-y-auto h-full w-full">
+    <div style="height: 10vh;" class="pt-4 p-3">
+      <div class="flex justify-content-between">
+        <div class="text-4xl font-bold">Inventory</div>
+        <div class="flex flex-row">
+        <span class="p-input-icon-left mr-4">
+          <p-button (click)="printPage()" label="+ Print" styleClass="p-button-raised p-button-secondary"></p-button>
+        </span>
+        </div>
+      </div>
+      <p-divider></p-divider>
+    </div>
+
+    <!--//Content 1 -->
+    <div class="align-content-between flex flex-row p-3 gap-3 pb-0">
+      <!--//Bar 1 -->
+      <section class="w-full p-3 pb-4 bg-gray-100 border-round-xl">
+        <div class="flex flex-column gap-2 text-left pb-3">
+          <p class="rewardcards font-medium text-2xl">Reward Cards</p>
+          <h3 class="text-sm">Receive a free service after completing 10 sessions</h3>
+        </div>
+
+        <div class="rewardcardsframe bg-white shadow-1 border-round-xl text-center flex flex-column justify-content-center gap-3 pt-1">
+          <div class="card">
+            <p-chart type="bar" [data]="data" [options]="options"></p-chart>
+          </div>
+        </div>
+      </section>
+      <!--//Bar 2 -->
+      <section class="w-full p-3 pb-4 bg-gray-100 border-round-xl">
+        <div class="flex flex-column gap-2 text-left pb-3">
+          <p class="rewardcards font-medium text-2xl">Reward Cards</p>
+          <h3 class="text-sm">Receive a free service after completing 10 sessions</h3>
+        </div>
+
+        <div class="rewardcardsframe bg-white shadow-1 border-round-xl text-center flex flex-column justify-content-center gap-3 pt-1">
+          <div class="card">
+            <p-chart type="bar" [data]="data2" [options]="options2"></p-chart>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!--//Content 2 -->
+    <div class="flex flex-row p-3 gap-0 pt-3">
+      <section class="w-full bg-gray-100 border-round-xl p-3">
+        <div class="flex flex-column gap-2 text-left pb-2">
+          <p class="rewardcards font-medium text-2xl">Summary</p>
+        </div>
+        <div class="flex flex-row gap-6">
+          <p-card class="w-20rem">
+            <div class="flex flex-column gap-2">
+              <p class="text-xs text-gray-600">Total Income</p>
+              <div class="w-full flex justify-content-between flex-wrap">
+                <h1 class="w-fit text-2xl font-bold">101,213 BAHT</h1>
+                <div class="flex align-items-center justify-content-end w-fit">
+                  <p style="font-size: 0.6rem; background-color: #23d27d" class="border-round-xl p-1 pl-2 pr-2 font-normal text-white">+15.5%</p>
+                </div>
+              </div>
+            </div>
+          </p-card>
+
+
+          <p-card class="w-20rem">
+            <div class="flex flex-column gap-2">
+              <p class="text-xs text-gray-600">Total Sales</p>
+              <div class="w-full flex justify-content-between flex-wrap">
+                <h1 class="w-fit text-2xl font-bold">431,204 BAHT</h1>
+                <div class="flex align-items-center justify-content-end w-fit">
+                  <p style="font-size: 0.6rem; background-color: #23d27d" class="border-round-xl p-1 pl-2 pr-2 font-normal text-white">+15.5%</p>
+                </div>
+              </div>
+            </div>
+          </p-card>
+
+          <p-card class="w-20rem">
+            <div class="flex flex-column gap-2">
+              <p class="text-xs text-gray-600">Total customer</p>
+              <div class="w-full flex justify-content-between flex-wrap">
+                <h1 class="w-fit text-2xl font-bold">101</h1>
+                <div class="flex align-items-center justify-content-end w-fit">
+                  <p style="font-size: 0.6rem; background-color: #23d27d" class="border-round-xl p-1 pl-2 pr-2 font-normal text-white">+15.5%</p>
+                </div>
+              </div>
+            </div>
+          </p-card>
+
+        </div>
+      </section>
+    </div>
+  </section>
+</app-sidebar>

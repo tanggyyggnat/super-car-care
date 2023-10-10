@@ -10,16 +10,13 @@
 
 
 .rewardcards {
-  background-image: linear-gradient(to left, #e9eaf8, #898db2, #5F6482, #c2c6ff);
+  background-image: linear-gradient(to right, #7f8198, #36383d, rgb(85, 91, 157));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent; /* Set the text color to transparent */
 }
 h3{
-  background-image: linear-gradient(to left, #e9eaf8, #898db2, #5F6482, #c2c6ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent; /* Set the text color to transparent */
+  color: #7f838a;
 }
 
 .rewardcardsframe{
@@ -31,20 +28,18 @@ h3{
 }
 
 .rewardcardsframe:hover{
-  background-position: right;
-  display: block;
-  color: white;
-  transform: scale(104%);
+  //background-position: right;
+  //display: block;
+  //color: white;
+  //transform: scale(104%);
 }
 
 :host ::ng-deep .p-card .p-card-body {
-  padding: 1.25rem;
+  padding: 0.5rem;
   background-size: 350%;
   background-image: linear-gradient(to left, #ffffff, #ffffff, #ffffff, #ffffff);
-
   color: #000000;
   border-radius: 1rem;
-  box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.1), 0px 4px 5px -2px rgba(0, 0, 0, 0.12), 0px 10px 15px -5px rgba(0, 0, 0, 0.2) !important;
   transition: 877ms;
 }
 
@@ -53,12 +48,23 @@ h3{
   display: block;
   color: #5F6482;
   background-image: linear-gradient(to left, #ffffff, #b0b5d3, #ffffff);
+  box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.1), 0px 4px 5px -2px rgba(0, 0, 0, 0.12), 0px 10px 15px -5px rgba(0, 0, 0, 0.2) !important;
   transform: scale(104%);
 }
 
 :host ::ng-deep .p-card {
   background: rgba(255, 255, 255, 0);
+  height: fit-content;
   color: #495057;
   box-shadow: none;
   border-radius: 0px;
+}
+:host ::ng-deep .sidebar{
+  display: none;
+}
+
+@media print {
+  .printable {
+
+  }
 }
