@@ -12,23 +12,24 @@
   </div>
 
   <div style="border: 0.2px white solid; background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);background: linear-gradient(rgba(0,0,0,0), rgba(255,255,255,0));" class="login-content flex flex-wrap justify-content-center border-left-none border-noround-left border-round-3xl border-white">
-    <form>
       <div class="flex flex-row align-items-center justify-content-center gap-3 pb-3">
         <img class="h-3rem" src="./assets/logo.png">
         <h2 class="text-white title text-2xl">Super car care</h2>
       </div>
 
+    <div class="form" [formGroup]="formData">
+
       <section class="justify-content-center flex flex-row gap-3">
         <div class="input-div">
           <div class="div flex flex-column gap-2">
             <label  class="w-7rem text-left text-white" >First name</label>
-            <input class="text-xs p-inputtext " pInputText type="text" id="firstname" [(ngModel)]="value" />
+            <input class="text-xs p-inputtext " pInputText type="text" id="firstname" formControlName="custName" />
           </div>
         </div>
         <div class="input-div">
           <div class="div flex flex-column gap-2">
             <label  class="w-7rem text-left text-white" >Last name</label>
-            <input class="text-xs p-inputtext " pInputText type="text" id="lastname" [(ngModel)]="value" />
+            <input class="text-xs p-inputtext " pInputText type="text" id="lastname" formControlName="custSurname" />
           </div>
         </div>
       </section>
@@ -37,13 +38,13 @@
         <div class="input-div">
           <div class="div flex flex-column gap-2">
             <label  class="w-7rem text-left text-white" >E-mail</label>
-            <input class="text-xs p-inputtext " pInputText type="text" id="email" [(ngModel)]="value" />
+            <input class="text-xs p-inputtext " pInputText type="text" id="email" formControlName="custEmail" />
           </div>
         </div>
         <div class="input-div">
           <div class="div flex flex-column gap-2">
             <label  class="w-7rem text-left text-white" >Phone</label>
-            <input class="text-xs p-inputtext " pInputText type="text" id="phone" [(ngModel)]="value" />
+            <input class="text-xs p-inputtext " pInputText type="text" id="phone" formControlName="custPhone" />
           </div>
         </div>
       </section>
@@ -52,24 +53,24 @@
         <div class="input-div">
           <div class="div flex flex-column gap-2">
             <label  class="text-white" > Username  </label>
-            <input class="text-xs p-inputtext " pInputText type="text" id="username" [(ngModel)]="value" />
+            <input class="text-xs p-inputtext " pInputText type="text" id="username" formControlName="accountName" />
           </div>
         </div>
         <div class="input-div">
           <div class="div flex flex-column gap-2">
             <label class="text-white"> Password  </label>
-            <p-password id="password" class="text-xs" [(ngModel)]="value" [toggleMask]="true"></p-password>
+            <p-password id="password" class="text-xs" formControlName="password" [toggleMask]="true"></p-password>
           </div>
         </div>
       </section>
+
       <div class="pt-8">
-        <input type="submit" class="btn" value="Login">
+        <input type="submit" class="btn" value="Sign up" (click)="signup()">
         <div class="flex flex-row justify-content-center gap-1">
           <p class="text-white text-sm">Already have an account?</p>
           <p routerLink="/signin" class="text-white text-sm underline cursor-pointer ">sign in</p>
         </div>
       </div>
-
-    </form>
+    </div>
   </div>
 </div>
