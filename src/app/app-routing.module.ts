@@ -5,6 +5,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
+import { ReservationdetailComponent } from './pages/reservationdetail/reservationdetail.component';
 
 const routes: Routes = [
   {
@@ -31,10 +32,10 @@ const routes: Routes = [
     path: 'history',
     loadChildren: () => import('./pages/history/history.module').then(m => m.HistoryModule),
   },
-  // {
-  //   path: 'payment',
-  //   component: PaymentComponent,
-  // },
+  {
+    path: 'reservationdetail',
+    component: ReservationdetailComponent,
+  },
   {
     path: 'schedule',
     component: ScheduleComponent,

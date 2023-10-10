@@ -18,11 +18,14 @@ export class InventoryService {
     return this.http.get(`http://localhost:3000/api/stock/${inventoryId}`);
   }
 
-  addInventory(value: any) {
-    return this.http.post('http://localhost:3000/api/stock', value);
+  addInventory(stockName: string, stockQuantity: number) {
+    return this.http.post('http://localhost:3000/api/stock', {
+      stockName,
+      stockQuantity
+    });
   }
 
   editInventory(value: any) {
-    return this.http.put('http://localhost:3000/api/stock', value);
+    return this.http.patch(`http://localhost:3000/api/stock/${value.id}`, value);
   }
 }

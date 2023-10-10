@@ -70,11 +70,6 @@ export class SidebarComponent implements OnInit {
               icon: 'pi pi-inbox',
               routerLink: ['/inventory'],
             },
-            {
-              label: 'Reservation',
-              icon: 'pi pi-ticket',
-              routerLink: ['/reservation'],
-            },
           ],
         },
       ]
