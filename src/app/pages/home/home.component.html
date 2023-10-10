@@ -1,3 +1,72 @@
-<app-sidebar> 
-    Home        
+<app-sidebar>
+  <div style="height: 10vh;" class="pt-4 p-3">
+    <div class="flex justify-content-between">
+      <div class="text-4xl font-bold">Home</div>
+    </div>
+    <p-divider></p-divider>
+  </div>
+
+
+  <div class="flex flex-row p-3 gap-5">
+    <section class="col-7 p-3">
+      <div style="height: 100%" class="rewardcardsframe shadow-5 border-round-xl text-center flex flex-column justify-content-center gap-3 pt-5 pb-5">
+        <p class="rewardcards font-medium text-2xl text-left pl-5 pb-5">Reward Cards</p>
+        <div class="card flex justify-content-center">
+          <p-chart type="doughnut" [data]="data" [options]="options" pTooltip></p-chart>
+        </div>
+
+        <div class="flex flex-column pt-3 gap-2">
+          <h3 class="text-lg">3/10 times</h3>
+          <h3 class="text-sm">Receive a free service after completing 10 sessions</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="col-4 p-3 ">
+      <div class="flex justify-content-between flex-wrap gap-6">
+        <p-card class="w-30rem">
+          <div class="w-full flex flex-row align-content-start gap-3">
+            <div class="shadow-5 border-round-xl w-fit h-fit bg-white p-2">
+              <img class="w-3rem h-3rem" src="https://cdn-icons-png.flaticon.com/512/5041/5041940.png" alt="Image Description">
+            </div>
+            <div class="flex flex-column align-content-start">
+              <div class="w-10rem">
+                <p class="text-lg "> Car Wash </p>
+              </div>
+              <p class="text-xs">You have used the service 3 times</p>
+            </div>
+          </div>
+        </p-card>
+
+        <p-card class=" w-30rem">
+          <div class="w-full flex flex-row align-content-start gap-3">
+            <div class="shadow-5 border-round-xl w-fit h-fit bg-white p-2">
+              <img class="w-3rem h-3rem" src="https://cdn-icons-png.flaticon.com/512/9103/9103856.png" alt="Image Description">
+            </div>
+            <div class="flex flex-column align-content-start">
+              <div class="w-10rem">
+                <p class="text-lg ">Car maintenance</p>
+              </div>
+              <p class="text-xs">You have used the service 3 times</p>
+            </div>
+          </div>
+        </p-card>
+
+        <p-card class=" w-30rem">
+          <div class="w-full flex flex-row align-content-start gap-3">
+            <div class="shadow-5 border-round-xl w-fit h-fit bg-white p-2">
+              <img class="w-3rem h-3rem" src="https://cdn-icons-png.flaticon.com/512/11276/11276246.png" alt="Image Description">
+            </div>
+            <div class="flex flex-column align-content-start">
+              <div class="w-10rem">
+                <p class="text-lg ">Car Check Up</p>
+              </div>
+              <p class="text-xs">You have used the service 3 times</p>
+            </div>
+          </div>
+        </p-card>
+
+      </div>
+    </section>
+  </div>
 </app-sidebar>
