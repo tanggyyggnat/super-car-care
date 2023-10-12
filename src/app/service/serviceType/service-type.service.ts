@@ -4,21 +4,26 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ScheduleService {
+export class ServiceTypeService {
 
   constructor(
     private http:HttpClient
   ) { }
 
-  // field: id, empId, bookingId
-  // relation: employee, booking
-  // ?,[]: 
+  // field: id, serviceTypeName
+  // relation:
+  // ?,[]: subService, booking
 
-  getSchedule() {
+  getServiceType() {
     return this.http.get('http://localhost:3000/api/schedule');
   }
 
-  getScheduleById(id: number) {
+  getServiceTypeById(id: number) {
     return this.http.get(`http://localhost:3000/api/schedule/${id}`);
+  }
+
+  //{ serviceTypeName }
+  createServiceType(serviceTypeName: string) {
+    return this.http.post('http://localhost:3000/api/serviceType', serviceTypeName)
   }
 }

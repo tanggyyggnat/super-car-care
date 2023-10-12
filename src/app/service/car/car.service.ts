@@ -10,15 +10,17 @@ export class CarService {
     private http: HttpClient
   ) { }
 
-  getCarAll() {
+  // field: id, licensePlate, custId, carBrand
+  // relation: customer
+  // ?,[]: booking
+
+  getCar() {
     return this.http.get('http://localhost:3000/api/car');
   }
 
-  getCarByID(id: string) {
+  getCarById(id: number) {
     return this.http.get(`http://localhost:3000/api/car/${id}`);
   }
 
-  addCar(data: any) {
-    return this.http.post(`http://localhost:3000/api/car/addCar`,data);
-  }
+  
 }

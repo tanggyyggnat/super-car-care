@@ -10,22 +10,31 @@ export class InventoryService {
     private http: HttpClient
   ) { }
 
+  // field: id, stockName, stockQuantity, 
+  // relation: 
+  // ?,[]: bookingStock
+
   getInventory() {
     return this.http.get('http://localhost:3000/api/stock');
   }
 
-  getInventoryByID(inventoryId: string) {
-    return this.http.get(`http://localhost:3000/api/stock/${inventoryId}`);
+  getInventoryByID(id: number) {
+    return this.http.get(`http://localhost:3000/api/stock/${id}`);
   }
 
-  addInventory(stockName: string, stockQuantity: number) {
+  //{ stockName, stockQuantity }
+  createInventory(stockName: string, stockQuantity: number) {
     return this.http.post('http://localhost:3000/api/stock', {
       stockName,
       stockQuantity
     });
   }
 
-  editInventory(value: any) {
-    return this.http.patch(`http://localhost:3000/api/stock/${value.id}`, value);
+  editInventory(id: any, stockQuantity: number) {
+    return this.http.patch(`http://localhost:3000/api/stock/${id}`, stockQuantity);
+  }
+
+  searchStock(stockName: any){
+    return this.http.get(`http://localhost:3000/api/stock/search`, stockName);
   }
 }
