@@ -3,25 +3,26 @@ import { Component } from '@angular/core';
 interface processSteps {
   steps: string;
 }
+
 @Component({
-  selector: 'app-reservationdetail',
-  templateUrl: './reservationdetail.component.html',
-  styleUrls: ['./reservationdetail.component.scss']
+  selector: 'app-schedule-detail',
+  templateUrl: './schedule-detail.component.html',
+  styleUrls: ['./schedule-detail.component.scss']
 })
-export class ReservationdetailComponent {
+export class ScheduleDetailComponent {
 
   products = [
-    { name: 'Check In',steps: 'complete' , date: '15/10/2020', time:'10:30' , description: 'Examine the vehicle’s exterior, interior, and undercarriage for any visible issues.' },
-    { name: 'Visual Inspection',steps: 'in process' , date: '15/10/2020', time:'10:30' , description: 'Examine the vehicle’s exterior, interior, and undercarriage for any visible issues.' },
-    { name: 'Exterior Check',steps: 'complete' , date: '15/10/2020', time: '14:00', description: 'Inspect lights, tires, brakes, and other external components.'},
-    { name: 'Test Drive',steps: 'complete' , date: '15/10/2020', time: '16:15', description: 'Conduct a road test to evaluate handling, acceleration, and braking.'},
-    { name: 'Check Out',steps: 'in process' , date: '16/10/2020', time: '10:00', description: 'Inspect lights, tires, brakes, and other external components.'}
+    { name: 'Check In', steps: 'complete', date: '15/10/2020', time: '10:30', description: 'Examine the vehicle’s exterior, interior, and undercarriage for any visible issues.' },
+    { name: 'Visual Inspection', steps: 'in process', date: '15/10/2020', time: '10:30', description: 'Examine the vehicle’s exterior, interior, and undercarriage for any visible issues.' },
+    { name: 'Exterior Check', steps: 'complete', date: '15/10/2020', time: '14:00', description: 'Inspect lights, tires, brakes, and other external components.' },
+    { name: 'Test Drive', steps: 'complete', date: '15/10/2020', time: '16:15', description: 'Conduct a road test to evaluate handling, acceleration, and braking.' },
+    { name: 'Check Out', steps: 'in process', date: '16/10/2020', time: '10:00', description: 'Inspect lights, tires, brakes, and other external components.' }
   ];
 
   washing = [
-    {name: 'Exterior Wash',price: 200},
-    {name: 'Interior Clean',price: 300},
-    {name: 'Engine Bay Detailing',price: 500},
+    { name: 'Exterior Wash', price: 200 },
+    { name: 'Interior Clean', price: 300 },
+    { name: 'Engine Bay Detailing', price: 500 },
     // Add more items as needed
   ];
 
@@ -75,8 +76,8 @@ export class ReservationdetailComponent {
 
   ngOnInit() {
     this.optionsSteps = [
-      { steps: 'Waiting'},
-      { steps: 'In process'},
+      { steps: 'Waiting' },
+      { steps: 'In process' },
       { steps: 'Complete' },
     ];
   }

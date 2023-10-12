@@ -62,7 +62,7 @@ export class SidebarComponent implements OnInit {
             {
               label: 'Home',
               icon: 'pi pi-home',
-              routerLink: ['/employee'],
+              routerLink: ['/home'],
             },
             {
               label: 'Schedule',
