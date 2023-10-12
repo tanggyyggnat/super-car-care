@@ -1,59 +1,100 @@
 <app-sidebar>
-    <div class="text-xl flex justify-content-center pt-4 pb-4">Customer Information</div>
-    <div class="flex justify-content-evenly ">
-      <div class="flex flex-column gap-2">
-        <label htmlFor="username">First Name</label>
-        <input pInputText placeholder="Enter Your First Name" />
-      </div>
-      <div class="flex flex-column gap-2">
-        <label htmlFor="username">Last Name</label>
-        <input pInputText placeholder="Enter Your First Name" />
-      </div>
+  <div class="shadow-2 border-round-sm p-3 mb-3 p-4">
+    <div class="flex justify-content-center text-xl font-bold mt-2 mb-4">
+      Customer Information
     </div>
-    <div class="flex justify-content-evenly mt-3">
-      <div class="flex flex-column gap-2">
-        <label htmlFor="username">Tel</label>
-        <input pInputText placeholder="Enter Your Phone Number" />
+
+    <div class="grid col-8 col-offset-2 -mb-3">
+      <div class="col-12">
+        <label>First Name</label>
       </div>
-      <div class="flex flex-column gap-2">
-        <label htmlFor="username">E-Mail</label>
-        <input pInputText placeholder="Enter Your Email" />
-      </div>
-    </div>
-    <div class="flex justify-content-evenly mt-3">
-      <div class="flex flex-column gap-2">
-        <label htmlFor="username">Car License</label>
-        <input pInputText placeholder="Enter Your Car License" />
-      </div>
-      <div class="flex flex-column gap-2">
-        <label htmlFor="username">Car Model</label>
-        <input pInputText placeholder="Enter Your Car Model" />
-      </div>
-    </div>
-    <div class="text-xl flex flex-row justify-content-evenly pt-5 pb-0">Appointment Information</div>
-    <div class="flex justify-content-center mt-3">
-      <div class="flex flex-column gap-2">
-        <label htmlFor="username">Service Types</label>
-        <p-dropdown [options]="typeService" [(ngModel)]="selectedService" optionLabel="name"></p-dropdown>
-      </div>
-    </div>
-    <div class="flex justify-content-center mt-3">
-      <div class="flex flex-column gap-2">
-        <label htmlFor="username">Date Appointment</label>
-        <p-calendar [(ngModel)]="date"></p-calendar>
+      <div class="col-12">
+        <input pInputText placeholder="Enter Your First Name" class="w-full -mt-2" />
       </div>
     </div>
 
+    <div class="grid col-8 col-offset-2 -mb-3">
+      <div class="col-12">
+        <label>Last Name</label>
+      </div>
+      <div class="col-12">
+        <input pInputText placeholder="Enter Your Last Name" class="w-full -mt-2" />
+      </div>
+    </div>
 
+    <div class="grid col-8 col-offset-2 -mb-3">
+      <div class="col-12">
+        <label>Tel</label>
+      </div>
+      <div class="col-12">
+        <input pInputText placeholder="Enter Your Phone Number" class="w-full -mt-2" pKeyFilter="num" maxlength="10" />
+      </div>
+    </div>
 
+    <div class="grid col-8 col-offset-2 -mb-3">
+      <div class="col-12">
+        <label>Email</label>
+      </div>
+      <div class="col-12">
+        <input pInputText placeholder="Enter Your Email" class="w-full -mt-2"/>
+      </div>
+    </div>
 
-    <div class="flex justify-content-center mt-3">
-      <div class="flex flex-column gap-2">
-        <p-table [value]="products" styleClass="p-datatable-striped" [tableStyle]="{'min-width': '50rem'}">
+    <div class="grid col-8 col-offset-2 -mb-3">
+      <div class="col-12">
+        <label>Car License</label>
+      </div>
+      <div class="col-12">
+        <input pInputText placeholder="Enter Your Car License" class="w-full -mt-2"/>
+      </div>
+    </div>
+
+    <div class="grid col-8 col-offset-2 -mb-3">
+      <div class="col-12">
+        <label>Car Model</label>
+      </div>
+      <div class="col-12">
+        <input pInputText placeholder="Enter Your Car Model" class="w-full -mt-2"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="shadow-2 border-round-sm p-3 p-4">
+    <div class="flex flex-row justify-content-evenly text-xl font-bold mt-2 mb-4">
+      Appointment Information
+    </div>
+
+    <div class="grid col-8 col-offset-2 -mb-3">
+      <div class="col-12">
+        <label>Service Types</label>
+      </div>
+      <div class="col-12">
+        <p-dropdown 
+          [options]="typeService" 
+          styleClass="-mt-2 w-full"
+          optionLabel="name">
+        </p-dropdown>
+      </div>
+    </div>
+
+    <div class="grid col-8 col-offset-2 -mb-3">
+      <div class="col-12">
+        <label>Date Appointment</label>
+      </div>
+      <div class="col-12">
+        <p-calendar 
+          styleClass="-mt-2 w-full">
+        </p-calendar>
+      </div>
+    </div>
+
+    <div class="grid col-8 col-offset-2 -mb-3">
+      <div class="col-12">
+        <p-table [value]="products" styleClass="p-datatable-striped">
           <ng-template pTemplate="header">
             <tr>
-              <th>เวลา</th>
-              <th>จอง</th>
+              <th>Time</th>
+              <th>Reservation Status</th>
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-product>
@@ -65,24 +106,25 @@
         </p-table>
       </div>
     </div>
-<!--    <div class="flex justify-content-center mt-3">-->
-<!--      <div class="flex flex-column gap-2">-->
-<!--        <label htmlFor="username">Time Appointment</label>-->
-<!--        <p-calendar [(ngModel)]="selectedTime" [timeOnly]="true"></p-calendar>-->
-<!--      </div>-->
-<!--    </div>-->
-    <div class="flex justify-content-center mt-3">
-      <div class="flex flex-column gap-2">
-        <label htmlFor="username">Other Information</label>
-        <input class="fullWidth" pInputText/>
+
+    <div class="grid col-8 col-offset-2 -mb-3">
+      <div class="col-12">
+        <label>Other Information</label>
+      </div>
+      <div class="col-12">
+        <textarea rows="3" pInputTextarea class="w-full"></textarea>
       </div>
     </div>
-    <div class="flex justify-content-center mt-3">
-      <div class="flex flex-column gap-2">
-        <p-button label="Search Your Reservation"
-                  class="p-button-sm"
-                  [style]="{width : '800px', background : '#3c3c3c', border: 'none'}">
-        </p-button>
+
+    <div class="grid col-8 col-offset-2 -mb-3">
+      <div class="col-12">
+        <p-button 
+          label="Search Your Reservation" 
+          class="p-button-sm"
+          styleClass="w-full"
+          [style]="{background : '#3c3c3c', border: 'none'}">
+        </p-button>      
       </div>
     </div>
+  </div>
 </app-sidebar>

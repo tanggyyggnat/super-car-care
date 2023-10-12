@@ -1,25 +1,12 @@
-input, .dropdown {
-    width: 300px;
-}
-
-:host ::ng-deep .p-dropdown .p-dropdown-label {
-    width: 750px;
-}
-
-:host ::ng-deep .p-calendar .p-inputtext {
-  flex: 1 1 auto;
-  width: 800px;
-}
-
-:host ::ng-deep .p-calendar .p-datepicker {
-  min-width: 50%;
+input,
+.dropdown {
+  width: 300px;
 }
 
 .fullWidth {
-    width: 800px;
+  width: 800px;
 }
 
-
-label{
+label {
   font-size: 0.9em;
 }
