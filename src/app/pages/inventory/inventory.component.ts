@@ -43,7 +43,7 @@ export class InventoryComponent {
   }
 
   addItem() {
-    this.inventoryService.addInventory(this.newProductName, this.newProductQuantity)
+    this.inventoryService.createInventory(this.newProductName, this.newProductQuantity)
       .subscribe((res: any) => {
         this.messageService.add({
           severity: 'success',
@@ -56,18 +56,20 @@ export class InventoryComponent {
   }
 
   updateInventory() {
-    this.inventoryService.editInventory(this.selectInventory).subscribe((res: any) => {
-      this.messageService.add({
-        severity: 'success',
-        summary: 'สำเร็จ',
-        detail: 'แก้ไขข้อมูลสำเร็จ'
+    this.inventoryService
+      .editInventory(this.selectInventory.id, parseInt(this.selectInventory.stockQuantity))
+      .subscribe((res: any) => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'สำเร็จ',
+          detail: 'แก้ไขข้อมูลสำเร็จ'
+        });
+        this.getInventory();
+        this.updateVisible = false;
       });
-      this.getInventory();
-      this.updateVisible = false;
-    });
   }
 
   searchInventory() {
-  // TODO: ค้นหาข้อมูล
+    // TODO: ค้นหาข้อมูล
   }
 }

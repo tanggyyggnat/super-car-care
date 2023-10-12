@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { AuthService } from 'src/app/service/auth/auth.service';
+import { SigninService } from 'src/app/service/signin/signin.service';
+import { SignupService } from 'src/app/service/signup/signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -23,7 +24,7 @@ export class SignupComponent {
   constructor(
     private router: Router,
     private messageService: MessageService,
-    private authService: AuthService
+    private signupService: SignupService
   ) { }
 
   signup() {
@@ -37,8 +38,8 @@ export class SignupComponent {
       return;
     }
 
-    this.authService
-      .register(form.value)
+    this.signupService
+      .signup(form.value)
       .subscribe(() => {
         this.messageService.add({
           severity: 'success',
