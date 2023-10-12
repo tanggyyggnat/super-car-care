@@ -3,31 +3,31 @@
     <div class="flex justify-content-evenly ">
       <div class="flex flex-column gap-2">
         <label htmlFor="username">First Name</label>
-        <input pInputText id="username" placeholder="Enter Your First Name" />
+        <input pInputText placeholder="Enter Your First Name" />
       </div>
       <div class="flex flex-column gap-2">
         <label htmlFor="username">Last Name</label>
-        <input pInputText id="username" placeholder="Enter Your First Name" />
+        <input pInputText placeholder="Enter Your First Name" />
       </div>
     </div>
     <div class="flex justify-content-evenly mt-3">
       <div class="flex flex-column gap-2">
         <label htmlFor="username">Tel</label>
-        <input pInputText id="username" placeholder="Enter Your Phone Number" />
+        <input pInputText placeholder="Enter Your Phone Number" />
       </div>
       <div class="flex flex-column gap-2">
         <label htmlFor="username">E-Mail</label>
-        <input pInputText id="username" placeholder="Enter Your Email" />
+        <input pInputText placeholder="Enter Your Email" />
       </div>
     </div>
     <div class="flex justify-content-evenly mt-3">
       <div class="flex flex-column gap-2">
         <label htmlFor="username">Car License</label>
-        <input pInputText id="username" placeholder="Enter Your Car License" />
+        <input pInputText placeholder="Enter Your Car License" />
       </div>
       <div class="flex flex-column gap-2">
         <label htmlFor="username">Car Model</label>
-        <input pInputText id="username" placeholder="Enter Your Car Model" />
+        <input pInputText placeholder="Enter Your Car Model" />
       </div>
     </div>
     <div class="text-xl flex flex-row justify-content-evenly pt-5 pb-0">Appointment Information</div>
@@ -43,14 +43,34 @@
         <p-calendar [(ngModel)]="date"></p-calendar>
       </div>
     </div>
+
+
+
+
     <div class="flex justify-content-center mt-3">
       <div class="flex flex-column gap-2">
-        <label htmlFor="username">Time Appointment</label>
-        <p-calendar [(ngModel)]="selectedTime" [timeOnly]="true"></p-calendar>
-
-
+        <p-table [value]="products" styleClass="p-datatable-striped" [tableStyle]="{'min-width': '50rem'}">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>เวลา</th>
+              <th>จอง</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product>
+            <tr>
+              <td>{{ product.time}}</td>
+              <td><p-tag [value]="product.status" [severity]="getSeverity(product.status)"></p-tag></td>
+            </tr>
+          </ng-template>
+        </p-table>
       </div>
     </div>
+<!--    <div class="flex justify-content-center mt-3">-->
+<!--      <div class="flex flex-column gap-2">-->
+<!--        <label htmlFor="username">Time Appointment</label>-->
+<!--        <p-calendar [(ngModel)]="selectedTime" [timeOnly]="true"></p-calendar>-->
+<!--      </div>-->
+<!--    </div>-->
     <div class="flex justify-content-center mt-3">
       <div class="flex flex-column gap-2">
         <label htmlFor="username">Other Information</label>

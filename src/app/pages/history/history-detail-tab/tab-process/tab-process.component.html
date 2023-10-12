@@ -1,1 +1,25 @@
-<p>tab-process works!</p>
+<div style="height: 100%" class="shadow-2 border-round-sm p-5 bg-white overflow-y-auto w-full">
+  <div class="bg-white align-self-center pl-7  flex flex-column text-center gap-0  h-full">
+    <div class="flex flex-row gap-3 h-fit" *ngFor="let event of processDetails">
+
+      <svg width="21" height="100%" viewBox="0 0 21 95" fill="none">
+        <circle cx="10.5" cy="10.5" r="10.5" transform="rotate(-90 10.5 10.5)" fill="black"/>
+        <line x1="10.5" y1="100%" x2="10.5" stroke="black"/>
+      </svg>
+      <div class="text-lg flex flex-row gap-3">
+        <div class="align-self-start w-fit text-left">
+          <p>{{ event.date }}</p>
+        </div>
+        <div class="align-self-start w-fit text-left">
+          <p>{{ event.time }}</p>
+        </div>
+        <div class="align-self-start w-fit text-left">
+          <p class="font-bold">{{ event.name }}</p>
+          <div class="w-fit flex-wrap">
+            <p>{{ event.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

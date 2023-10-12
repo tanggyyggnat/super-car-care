@@ -29,7 +29,13 @@ export class SigninComponent {
             summary: 'สำเร็จ',
             detail: 'เข้าสู่ระบบสำเร็จ'
           });
-          this.router.navigate(['/']);
+          let user = JSON.parse(localStorage.getItem('user')!);
+          if (user.role == 'CUSTOMER') {
+            this.router.navigate(['/home']);
+          }
+          else {
+            this.router.navigate(['/employee']);
+          }
         },
         error: (err: any) => {
           this.messageService.add({
