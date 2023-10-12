@@ -10,18 +10,18 @@ export class SignupService {
     private http: HttpClient
   ) { }
 
-//account
+  //account
   // field: id, accountName, password, role
   // relation:
   // ?,[]: employee, customer
 
-//customer
+  //customer
   // field: id, custName, custSurname, custPhone, custEmail, accountId
   // relation: account
   // ?,[]: booking, car
 
   //{ id, password, custName, custSurname, custPhone, custEmail }
-  signup(accountName: string, password: String, custName: String, custSurname: String, custPhone: String, custEmail: String) {
-    return this.http.post('http://localhost:3000/api/signup',  { accountName, password, custName, custSurname, custPhone, custEmail })
+  signup(data: any) {
+    return this.http.post('http://localhost:3000/api/signup', data)
   }
 }
