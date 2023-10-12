@@ -15,11 +15,11 @@ export class ServiceTypeService {
   // ?,[]: subService, booking
 
   getServiceType() {
-    return this.http.get('http://localhost:3000/api/schedule');
+    return this.http.get('http://localhost:3000/api/serviceType');
   }
 
   getServiceTypeById(id: number) {
-    return this.http.get(`http://localhost:3000/api/schedule/${id}`);
+    return this.http.get(`http://localhost:3000/api/serviceType/${id}`);
   }
 
   //{ serviceTypeName }
