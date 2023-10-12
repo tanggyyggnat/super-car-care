@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { AuthService } from 'src/app/service/auth/auth.service';
+import { SigninService } from 'src/app/service/signin/signin.service';
 
 @Component({
   selector: 'app-signin',
@@ -15,12 +15,12 @@ export class SigninComponent {
   constructor(
     private router: Router,
     private messageService: MessageService,
-    private authService: AuthService
+    private signinService: SigninService
   ) { }
 
   login() {
-    this.authService.
-      login(this.accountName, this.password)
+    this.signinService.
+    signin(this.accountName, this.password)
       .subscribe({
         next: (res: any) => {
           localStorage.setItem('user', JSON.stringify(res));
@@ -30,12 +30,7 @@ export class SigninComponent {
             detail: 'เข้าสู่ระบบสำเร็จ'
           });
           let user = JSON.parse(localStorage.getItem('user')!);
-          if (user.role == 'CUSTOMER') {
-            this.router.navigate(['/home']);
-          }
-          else {
-            this.router.navigate(['/employee']);
-          }
+          this.router.navigate(['/home']);
         },
         error: (err: any) => {
           this.messageService.add({

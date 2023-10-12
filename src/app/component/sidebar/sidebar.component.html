@@ -6,8 +6,8 @@
                 size="xlarge" 
                 shape="circle">
             </p-avatar>
-            <div class="text-3xl text-white mt-3">Tanggy</div>
-            <div class="text-white mt-2">Customer</div>
+            <div class="text-2xl text-white text-center mt-3 flex-wrap">{{ user.accountName }}</div>
+            <div class="text-white text-sm mt-2">({{ user.role }})</div>
         </div>
         <div class="p-0">
             <p-menu styleClass="listMenu" [model]="items"></p-menu>
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="content-container p-3">
-        <div class="bg-white border-round-md shadow-1 h-full">
+        <div class="bg-white border-round-md shadow-1 h-full p-3">
             <ng-content>
             </ng-content>
         </div>

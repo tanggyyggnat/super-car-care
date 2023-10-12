@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@200&family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@200&display=swap');
+@import "primeicons/primeicons.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Inter', sans-serif, 'IBM Plex Sans Thai', sans-serif;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    //width: 13vw;
+}
+
+:host ::ng-deep .p-calendar {
+    width: 8rem;
+}
+
+:host ::ng-deep .p-datepicker table th {
+    background: #4B527E;
+    padding: 0.3rem;
+}
+
+:host ::ng-deep .p-datepicker .p-datepicker-header {
+    padding: 0rem;
+}
+
+:host ::ng-deep .p-calendar .p-datepicker {
+    min-width: 10%;
+}
+
+:host ::ng-deep .p-datepicker table td {
+    padding: 0rem;
+}
+
+
+:host ::ng-deep .p-dropdown-panel .p-dropdown-items {
+    padding: 0.75rem 0;
+}
+
+:host ::ng-deep .p-dropdown .p-dropdown-label {
+    min-width: 8rem;
+}
+
+:host ::ng-deep .p-dropdown .p-dropdown-trigger {
+    width: auto;
+    padding: 0px;
+    padding-right: 1rem;
+}
+
+:host ::ng-deep .p-dialog {
+    background: white;
+    gap: 1rem;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+    background: #4B527E;
+    color: white;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header svg {
+    fill: white;
+    color: white;
+}
+
+:host ::ng-deep .p-inputtext {
+    padding: 4px;
+    font-size: 1rem;
+    width: 5rem;
+}
+
+.subservice_price {
+    padding: 4px;
+    font-size: 1rem;
+    width: 5rem;
+}
+
+thead {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.09) 0px 3px 7px -3px;
+}
+
+th {
+    padding: 10px;
+    color: black;
+    background: #ffffff;
+}
+
+.table-header {
+    padding: 10px;
+    padding-bottom: 5px;
+}
+
+td {
+    padding: 10px;
+    padding-top: 15px;
+    border-bottom: #BEBEBE 0.5px solid;
+}

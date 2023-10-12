@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-schedule',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class ScheduleComponent {
   products: any[]=[
     {
-      booking:"1",
+      id:"1",
       service:"Car Wash",
       date:"10/1/2023",
       time:"2:34 PM",
@@ -18,7 +19,7 @@ export class ScheduleComponent {
       status:"success"
     },
     {
-      booking:"2",
+      id:"2",
       service:"car maintanance",
       date:"10/2/2023",
       time:"12:34 AM",
@@ -27,14 +28,18 @@ export class ScheduleComponent {
       carLicense:"tang789",
       status:"in process"
     },
-    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
-    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"pending"},
-    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
-    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
-    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
-    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
-    {booking:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"}
+    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
+    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"pending"},
+    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
+    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
+    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
+    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
+    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"}
   ];
+
+  constructor(
+    private router : Router
+  ) { }
 
   getSeverity(status: string):any {
     switch (status) {
@@ -45,6 +50,12 @@ export class ScheduleComponent {
       case 'pending':
         return 'danger';
     }
+  }
+
+  onRowSelect(event: any): void {
+    console.log(event);
+    this.router.navigate(['schedule/detail/', event.data.id]);
+
   }
 
 }
