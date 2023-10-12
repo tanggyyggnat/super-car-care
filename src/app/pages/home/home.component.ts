@@ -9,13 +9,22 @@ import { CarService } from 'src/app/service/car/car.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  user: any = {};
+  userRole: string = '';
   data: any;
 
   options: any;
 
+  constructor() {
+    this.user = JSON.parse(localStorage.getItem('user')!);
+    if(this.user) {
+      this.userRole = this.user.role;
+      console.log(this.userRole);
+    }
+  }
+
   ngOnInit() {
     const documentStyle = getComputedStyle(document.documentElement);
-    // const textColor = documentStyle.getPropertyValue('--text-color');
 
     this.data = {
       labels: ['Service usage', 'Get a free service after'],
@@ -46,4 +55,6 @@ export class HomeComponent implements OnInit {
     };
 
   }
+
+
 }

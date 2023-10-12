@@ -18,6 +18,7 @@ import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
 import { TabPaymentComponent } from './pages/history/history-detail-tab/tab-payment/tab-payment.component';
 import { ReservationdetailComponent } from './pages/reservationdetail/reservationdetail.component';
+import { EmployeeComponent } from './pages/employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ReservationdetailComponent } from './pages/reservationdetail/reservatio
     FooterComponent,
     ScheduleComponent,
     InventoryComponent,
-    ReservationdetailComponent
+    ReservationdetailComponent,
+    EmployeeComponent
   ],
   imports: [
     SidebarComponent,
