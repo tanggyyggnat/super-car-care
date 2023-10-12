@@ -13,12 +13,12 @@ export class BookingComponent {
   typeService: any[] | undefined;
 
   products: any[]=[
-    {time:"09:00", status:"ว่าง"},
-    {time:"10:00", status:"ไม่ว่าง"},
-    {time:"11:00", status:"ว่าง"},
-    {time:"13:00", status:"ว่าง"},
-    {time:"14:00", status:"ไม่ว่าง"},
-    {time:"15:00", status:"ว่าง"},
+    {time:"09:00", status:"available"},
+    {time:"10:00", status:"Not available"},
+    {time:"11:00", status:"available"},
+    {time:"13:00", status:"available"},
+    {time:"14:00", status:"Not available"},
+    {time:"15:00", status:"available"},
   ];
   selectedService: any | undefined;
   date: Date | undefined;
@@ -39,9 +39,9 @@ export class BookingComponent {
   }
   getSeverity(status: string):any {
     switch (status) {
-      case 'ว่าง':
+      case 'available':
         return 'success';
-      case 'ไม่ว่าง':
+      case 'Not available':
         return 'warning';
     }
   }
