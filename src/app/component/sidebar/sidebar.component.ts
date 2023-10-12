@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { PrimeNGModule } from 'src/app/modules/primeng.module';
+import { AccountService } from 'src/app/service/account/account.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,10 +14,13 @@ import { PrimeNGModule } from 'src/app/modules/primeng.module';
   ]
 })
 export class SidebarComponent implements OnInit {
+  user: any = {};
+  customer: any = {};
   items: MenuItem[] | undefined;
 
   constructor(
     private router: Router,
+    private accountService: AccountService,
   ) {
   }
 
@@ -25,8 +29,8 @@ export class SidebarComponent implements OnInit {
   }
 
   getMenu() {
-    let user = JSON.parse(localStorage.getItem('user')!);
-    if (user.role == 'CUSTOMER') {
+    this.user = JSON.parse(localStorage.getItem('user')!);
+    if (this.user.role == 'CUSTOMER') {
       this.items = [
         {
           label: 'Customer',
