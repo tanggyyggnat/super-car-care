@@ -16,8 +16,6 @@ import { FooterComponent } from './component/footer/footer.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
-import { TabPaymentComponent } from './pages/history/history-detail-tab/tab-payment/tab-payment.component';
-import { ReservationdetailComponent } from './pages/reservationdetail/reservationdetail.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 
 @NgModule({
@@ -30,7 +28,6 @@ import { EmployeeComponent } from './pages/employee/employee.component';
     FooterComponent,
     ScheduleComponent,
     InventoryComponent,
-    ReservationdetailComponent,
     EmployeeComponent
   ],
   imports: [
