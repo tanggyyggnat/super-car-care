@@ -10,10 +10,7 @@
           <label>First Name</label>
         </div>
         <div class="col-12">
-          <input pInputText 
-            readonly
-            class="w-full -mt-2 readonly" 
-            formControlName="custName"/>
+          <input pInputText readonly class="w-full -mt-2 readonly" formControlName="custName" />
         </div>
       </div>
 
@@ -22,10 +19,7 @@
           <label>Last Name</label>
         </div>
         <div class="col-12">
-          <input pInputText 
-            readonly
-            class="w-full -mt-2 readonly" 
-            formControlName="custSurname"/>
+          <input pInputText readonly class="w-full -mt-2 readonly" formControlName="custSurname" />
         </div>
       </div>
 
@@ -34,10 +28,8 @@
           <label>Phone</label>
         </div>
         <div class="col-12">
-          <input pInputText 
-            readonly
-            class="w-full -mt-2 readonly" pKeyFilter="num" maxlength="10"
-            formControlName="custPhone"/>
+          <input pInputText readonly class="w-full -mt-2 readonly" pKeyFilter="num" maxlength="10"
+            formControlName="custPhone" />
         </div>
       </div>
 
@@ -46,10 +38,7 @@
           <label>Email</label>
         </div>
         <div class="col-12">
-          <input pInputText 
-            readonly
-            class="w-full -mt-2 readonly"
-            formControlName="custEmail"/>
+          <input pInputText readonly class="w-full -mt-2 readonly" formControlName="custEmail" />
         </div>
       </div>
 
@@ -58,11 +47,7 @@
           <label>Car License</label>
         </div>
         <div class="col-12">
-          <input 
-            pInputText 
-            placeholder="Enter Your Car License" 
-            class="w-full -mt-2"
-            formControlName="licensePlate"/>
+          <input pInputText placeholder="Enter Your Car License" class="w-full -mt-2" formControlName="licensePlate" />
           <span *ngIf="!formData.get('licensePlate')?.valid" class="text-red-500 text-sm mt-2" [hidden]="showValid">
             Please Enter Your Car License!
           </span>
@@ -74,11 +59,7 @@
           <label>Car Model</label>
         </div>
         <div class="col-12">
-          <input 
-            pInputText 
-            placeholder="Enter Your Car Model" 
-            class="w-full -mt-2"
-            formControlName="carBrand"/>
+          <input pInputText placeholder="Enter Your Car Model" class="w-full -mt-2" formControlName="carBrand" />
           <span *ngIf="!formData.get('carBrand')?.valid" class="text-red-500 text-sm mt-2" [hidden]="showValid">
             Please Enter Your Car Model!
           </span>
@@ -96,12 +77,8 @@
           <label>Service Types</label>
         </div>
         <div class="col-12">
-          <p-dropdown 
-            [options]="typeService" 
-            styleClass="-mt-2 w-full"
-            formControlName="serviceTypeId"
-            optionLabel="serviceTypeName"
-            optionValue="id">
+          <p-dropdown [options]="typeService" styleClass="-mt-2 w-full" formControlName="serviceTypeId"
+            optionLabel="serviceTypeName" optionValue="id">
           </p-dropdown>
           <span *ngIf="!formData.get('serviceTypeId')?.valid" class="text-red-500 text-sm mt-2" [hidden]="showValid">
             Please Select Type of Service!
@@ -114,56 +91,70 @@
           <label>Date Appointment</label>
         </div>
         <div class="col-12">
-          <p-calendar 
-            dateFormat="dd-mm-yy"
-            formControlName="appointmentDateTime"
+          <p-calendar dateFormat="dd-mm-yy" placeholder="Select Date Appointment" formControlName="appointmentDateTime"
             styleClass="-mt-2 w-full">
           </p-calendar>
+          <span *ngIf="!formData.get('appointmentDateTime')?.valid" class="text-red-500 text-sm mt-2" [hidden]="showValid">
+            Please Select Date Appointment!
+          </span>
         </div>
       </div>
 
-      <div class="grid col-8 col-offset-2 -mb-3">
-        <div class="col-12">
-          <p-table [value]="products" styleClass="p-datatable-striped">
-            <ng-template pTemplate="header">
-              <tr>
-                <th>Time</th>
-                <th>Reservation Status</th>
-              </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-product>
-              <tr>
-                <td>{{ product.time}}</td>
-                <td><p-tag [value]="product.status" [severity]="getSeverity(product.status)"></p-tag></td>
-              </tr>
-            </ng-template>
-          </p-table>
+      <ng-container *ngIf="showTimeTable">
+        <div class="grid col-8 col-offset-2 -mb-3">
+          <div class="col-12">
+            <label>Time Appointment</label>
+          </div>
+          <div class="col-12">
+            <p-dropdown [options]="timeService" styleClass="-mt-2 w-full" formControlName="appointmentDateId"
+              optionLabel="value" optionValue="id">
+            </p-dropdown>
+            <span *ngIf="!formData.get('appointmentDateId')?.valid" class="text-red-500 text-sm mt-2" [hidden]="showValid">
+              Please Select Time Appointment!
+            </span>
+          </div>
         </div>
-      </div>
+
+        <div class="grid col-8 col-offset-2 -mb-3">
+          <div class="col-12">
+            <p-table [value]="listTime" styleClass="p-datatable-striped">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>Time</th>
+                  <th>Reservation Status</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-booking>
+                <tr>
+                  <td>{{ booking.time}}</td>
+                  <td>
+                    <p-tag 
+                    [style]="{'background': booking.status === 'Available' ? 'green' : (booking.status === 'Not Available' ? 'gray' : null) }"
+                    [value]="booking.status" >
+                    </p-tag>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </ng-container>
 
       <div class="grid col-8 col-offset-2 -mb-3">
         <div class="col-12">
           <label>Other Information</label>
         </div>
         <div class="col-12">
-          <textarea 
-            rows="3" pInputTextarea 
-            class="w-full"
-            formControlName="description">
+          <textarea rows="3" pInputTextarea class="w-full" formControlName="description">
           </textarea>
         </div>
       </div>
 
       <div class="grid col-8 col-offset-2 -mb-3">
         <div class="col-12">
-          <p-button 
-            icon="pi pi-book"
-            label="Booking Now!" 
-            class="p-button-sm"
-            styleClass="w-full"
-            (onClick)="booking()"
+          <p-button icon="pi pi-book" label="Booking Now!" class="p-button-sm" styleClass="w-full" (onClick)="booking()"
             [style]="{background : '#3c3c3c', border: 'none'}">
-          </p-button>      
+          </p-button>
         </div>
       </div>
     </div>
