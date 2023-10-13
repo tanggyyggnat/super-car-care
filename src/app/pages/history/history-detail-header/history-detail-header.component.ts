@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { PrimeNGModule } from 'src/app/modules/primeng.module';
@@ -8,12 +9,13 @@ import { PrimeNGModule } from 'src/app/modules/primeng.module';
   styleUrls: ['./history-detail-header.component.scss'],
   standalone: true,
   imports: [
+    CommonModule,
     PrimeNGModule
   ]
 })
 export class HistoryDetailHeaderComponent {
 
-  @Input() customer: any;
+  @Input() booking: any;
 
   step: MenuItem[] = [
     {
