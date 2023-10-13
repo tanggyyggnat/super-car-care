@@ -1,53 +1,9 @@
-<!--<app-sidebar>-->
-<!--    <div class="flex justify-content-between p-4 px-4">-->
-<!--        <div class="text-4xl font-bold"> Tanggy's Work </div>-->
-<!--        <div>-->
-<!--            <span class="p-input-icon-left">-->
-<!--                <i class="pi pi-search"></i>-->
-<!--                <input type="text" pInputText placeholder="Search..." />-->
-<!--            </span>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--    <div class="p-4 px-4">-->
-<!--        <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">-->
-<!--            <ng-template pTemplate="header">-->
-<!--                <tr>-->
-<!--                    <th>Booking</th>-->
-<!--                    <th>Service</th>-->
-<!--                    <th>Date</th>-->
-<!--                    <th>Time</th>-->
-<!--                    <th>Customer Name</th>-->
-<!--                    <th>Car brand</th>-->
-<!--                    <th>Car License</th>-->
-<!--                    <th>Status</th>-->
-<!--                </tr>-->
-<!--            </ng-template>-->
-<!--            <ng-template pTemplate="body" let-product>-->
-<!--                <tr>-->
-<!--                    <td>{{ product.booking }}</td>-->
-<!--                    <td>{{ product.service }}</td>-->
-<!--                    <td>{{ product.date }}</td>-->
-<!--                    <td>{{ product.time}}</td>-->
-<!--                    <td>{{ product.customerName}}</td>-->
-<!--                    <td>{{ product.carbrand}}</td>-->
-<!--                    <td>{{ product.carLicense}}</td>-->
-<!--                    <td><p-tag [value]="product.status" [severity]="getSeverity(product.status)"></p-tag></td>-->
-<!--            </ng-template>-->
-<!--        </p-table>-->
-<!--    </div>-->
-<!--</app-sidebar>-->
-
-
 <app-sidebar>
   <section style="height: 100%" class="overflow-y-auto w-full">
     <div style="height: 10vh;" class="pt-4 p-3">
       <div class="flex justify-content-between">
-        <div class="text-4xl font-bold">Tanggy's Schedule</div>
+        <div class="text-4xl font-bold">{{ user.accountName }}'s Schedule</div>
         <div class="flex flex-row">
-          <!--        <span class="p-input-icon-left mr-4">-->
-          <!--          <p-button (click)="setAddVisibleToTrue()" label="+ Add Products" styleClass="p-button-raised p-button-secondary"></p-button>-->
-          <!--        </span>-->
           <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
             <input type="text" pInputText placeholder="Search..." />
@@ -58,79 +14,33 @@
     </div>
 
     <div class="p-4 px-4 pb-0">
-      <p-table 
-        [value]="products" 
-        selectionMode="single" 
-        (onRowSelect)="onRowSelect($event)"
+      <p-table [value]="schedule" selectionMode="single" (onRowSelect)="onRowSelect($event)"
         [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">
           <tr class="text-center m-0 p-2">
-            <th class="text-center">Booking</th>
+            <th class="text-center">No.</th>
             <th>Service</th>
-            <th>Date</th>
-            <th>Time</th>
+            <th>Date Time</th>
             <th>Customer Name</th>
             <th>Car brand</th>
             <th>Car License</th>
-            <th>Status</th>
+            <th class="text-center">Status</th>
           </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-product>
-          <tr class="text-center m-0 p-2" [pSelectableRow]="product">
-            <td>{{ product.booking }}</td>
-            <td>{{ product.service }}</td>
-            <td>{{ product.date }}</td>
-            <td>{{ product.time}}</td>
-            <td>{{ product.customerName}}</td>
-            <td>{{ product.carbrand}}</td>
-            <td>{{ product.carLicense}}</td>
-            <td>
-              <p-tag class="cursor-pointer" routerLink="/reservationdetail" [value]="product.status"
-                [severity]="getSeverity(product.status)"></p-tag>
+        <ng-template pTemplate="body" let-schedule let-rowIndex="rowIndex">
+          <tr class="text-center m-0 p-2" [pSelectableRow]="schedule">
+            <td>{{ rowIndex + 1 }}</td>
+            <td>{{ schedule.booking.serviceType.serviceTypeName }}</td>
+            <td>{{ schedule.booking.appointmentDateTime | date:'dd/MM/yy' }}</td>
+            <td>{{ schedule.booking.customer.custName }} {{schedule.booking.customer.custSurname}}</td>
+            <td>{{ schedule.booking.car.carBrand}}</td>
+            <td>{{ schedule.booking.car.licensePlate}}</td>
+            <td class="text-center">
+              <p-tag class="cursor-pointer" [value]="schedule.booking.stepStatus" severity="warning"></p-tag>
             </td>
-            <!--            <td class="text-center">{{ product.numproduct}}</td>-->
-            <!--            <td>{{ product.productname}}</td>-->
-            <!--            <td>{{ product.number}}</td>-->
-            <!--            <td>-->
-            <!--              <div>-->
-            <!--                <button (click)="selectedItem(product)" pButton class="p-button-text p-button-rounded" icon="pi pi-pencil"></button>-->
-            <!--                <button (click)="deleteItem(product)" pButton class="p-button-text p-button-rounded p-button-danger" icon="pi pi-trash"></button>-->
-            <!--                &lt;!&ndash;                <p-splitButton label="Edit" (onClick)="selectedItem(product)" (onDropdownClick)="delete($event)" [model]="this.items" styleClass="p-button-raised p-button-plain p-button-text mr-2 mb-2"> </p-splitButton>&ndash;&gt;-->
-            <!--              </div>-->
-            <!--            </td>-->
           </tr>
         </ng-template>
       </p-table>
     </div>
   </section>
-
-  <!--//Update Stock-->
-  <!--  <p-dialog header="Update Inventory" [(visible)]="updateVisible" [modal]="true" [style]="{ width: '35vw' }" [draggable]="false" [resizable]="false">-->
-  <!--    <div class="flex flex-row align-items-center justify-content-center gap-3">-->
-  <!--      <div class="w-10rem">-->
-  <!--        <h1 class="text-lg">{{selectInventory.productname}}</h1>-->
-  <!--      </div>-->
-  <!--      <p-inputNumber [(ngModel)]="selectInventory.number" [showButtons]="true" > </p-inputNumber>-->
-  <!--    </div>-->
-
-  <!--    <section  class="w-full sticky bottom-0 right-0 bg-white p-0 pt-5" style="min-height: 8%; width: 100%; text-align: right;">-->
-  <!--      <p-button (onClick)="update()" label="save" class="p-button-sm"-->
-  <!--                [style]="{ padding: '4px', outline: 'none',height: '2rem', width: '6vw', background: '#4B527E' }">-->
-  <!--      </p-button>-->
-  <!--    </section>-->
-  <!--  </p-dialog>-->
-
-  <!--//Add Stock-->
-  <!--  <p-dialog header="Add Inventory" [(visible)]="addVisible" [modal]="true" [style]="{ width: '35vw' }" [draggable]="false" [resizable]="false">-->
-  <!--    <div class="flex flex-row align-items-center justify-content-center gap-3">-->
-  <!--      <input type="text" placeholder="product name" pInputText [(ngModel)]="newProductName" />-->
-  <!--      <p-inputNumber placeholder="quantity" [(ngModel)]="newProductQuantity" [showButtons]="true" > </p-inputNumber>-->
-  <!--    </div>-->
-
-  <!--    <section  class="w-full sticky bottom-0 right-0 bg-white p-0 pt-5" style="min-height: 8%; width: 100%; text-align: right;">-->
-  <!--      <p-button (onClick)="addItem()" label="save" class="p-button-sm"-->
-  <!--                [style]="{ padding: '4px', outline: 'none',height: '2rem', width: '6vw', background: '#4B527E' }">-->
-  <!--      </p-button>-->
-  <!--    </section>-->
-  <!--  </p-dialog>-->
 </app-sidebar>

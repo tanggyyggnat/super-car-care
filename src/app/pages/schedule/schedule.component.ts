@@ -1,47 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ScheduleService } from 'src/app/service/schedule/schedule.service';
 
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.scss']
 })
-export class ScheduleComponent {
-  products: any[]=[
-    {
-      id:"1",
-      service:"Car Wash",
-      date:"10/1/2023",
-      time:"2:34 PM",
-      customerName:"Aimakase",
-      carbrand:"Honda",
-      carLicense:"ai123",
-      status:"success"
-    },
-    {
-      id:"2",
-      service:"car maintanance",
-      date:"10/2/2023",
-      time:"12:34 AM",
-      customerName:"Tanggy",
-      carbrand:"Toyota",
-      carLicense:"tang789",
-      status:"in process"
-    },
-    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
-    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"pending"},
-    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
-    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
-    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
-    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"},
-    {id:"3", service:"car maintanance", date:"10/2/2023", time:"12:34 AM", customerName:"Tanggy", carbrand:"Toyota", carLicense:"tang789", status:"in process"}
-  ];
+export class ScheduleComponent implements OnInit {
+  user: any = {};
+  schedule: any[] = [];
 
   constructor(
-    private router : Router
-  ) { }
+    private router: Router,
+    private scheduleService: ScheduleService,
+  ) {
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+  }
 
-  getSeverity(status: string):any {
+  ngOnInit(): void {
+    this.getSchedule();
+  }
+
+  getSchedule() {
+    this.scheduleService
+      .getSchedule()
+      .subscribe((res: any) => {
+        this.schedule = res;
+        console.log(res);
+      });
+  }
+
+  getSeverity(status: string): any {
     switch (status) {
       case 'success':
         return 'success';
@@ -55,7 +45,5 @@ export class ScheduleComponent {
   onRowSelect(event: any): void {
     console.log(event);
     this.router.navigate(['schedule/detail/', event.data.id]);
-
   }
-
 }
