@@ -12,22 +12,26 @@
       <i class="pi pi-list mr-2"></i>
       <span>Process</span>
     </ng-template>
-    <tab-process></tab-process>
+    <tab-process [booking]="booking"></tab-process>
   </p-tabPanel>
 
-  <p-tabPanel>
-    <ng-template pTemplate="header">
-      <i class="pi pi-dollar mr-2"></i>
-      <span>Payment</span>
-    </ng-template>
-    <tab-payment></tab-payment>
-  </p-tabPanel>
-  
-  <p-tabPanel>
-    <ng-template pTemplate="header">
-      <i class="pi pi-check mr-2"></i>
-      <span>Check Out</span>
-    </ng-template>
-    <tab-check-out></tab-check-out>
-  </p-tabPanel>
+  <ng-container *ngIf="booking.payment?.stepStatus != 'COMPLETE'">
+    <p-tabPanel>
+      <ng-template pTemplate="header">
+        <i class="pi pi-dollar mr-2"></i>
+        <span>Payment</span>
+      </ng-template>
+      <tab-payment [booking]="booking"></tab-payment>
+    </p-tabPanel>
+  </ng-container>
+
+  <ng-container *ngIf="booking.payment?.stepStatus == 'COMPLETE'">
+    <p-tabPanel>
+      <ng-template pTemplate="header">
+        <i class="pi pi-check mr-2"></i>
+        <span>Check Out</span>
+      </ng-template>
+      <tab-check-out [booking]="booking"></tab-check-out>
+    </p-tabPanel>
+  </ng-container>
 </p-tabView>
