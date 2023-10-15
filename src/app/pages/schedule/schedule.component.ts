@@ -26,11 +26,10 @@ export class ScheduleComponent implements OnInit {
     this.scheduleService
       .getSchedule()
       .subscribe((res: any) => {
-        this.schedule = res;
-        console.log(this.schedule);
-        this.schedule.filter((item: any) => {
+        this.schedule = []
+
+        res.filter((item: any) => {
           if (item.booking.payment.amountMoney == 0) {
-            this.schedule = []
             this.schedule.push(item);
           }
         });
