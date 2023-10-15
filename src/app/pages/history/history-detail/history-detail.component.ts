@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MenuItem } from 'primeng/api';
-import data from 'src/app/mockup/customer.json';
+import { BookingService } from 'src/app/service/booking/booking.service';
 
 @Component({
   selector: 'app-history-detail',
@@ -11,7 +11,7 @@ import data from 'src/app/mockup/customer.json';
 export class HistoryDetailComponent {
   activeIndex: number = 0;
   customerId: string = '';
-  customer: any = {};
+  booking: any = {};
 
   items: MenuItem[] = [
     {
@@ -25,7 +25,8 @@ export class HistoryDetailComponent {
   ];
 
   constructor(
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private bookingService: BookingService
   ) {
     this.activatedRoute.params.subscribe(params => {
       if (params['id']) {
@@ -37,11 +38,13 @@ export class HistoryDetailComponent {
 
   getCustomer() {
     if (!this.customerId) return;
-    data.filter((item: any) => {
-      if (item.id == this.customerId) {
-        this.customer = item;
-      }
-    });
+    this.bookingService
+      .getBookingById(parseInt(this.customerId))
+      .subscribe((res: any) => {
+        this.booking = res;
+        console.log(this.booking);
+      });
+
   }
 
   changeIndex(index: number) {
