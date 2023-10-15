@@ -27,7 +27,13 @@ export class ScheduleComponent implements OnInit {
       .getSchedule()
       .subscribe((res: any) => {
         this.schedule = res;
-        console.log(res);
+        console.log(this.schedule);
+        this.schedule.filter((item: any) => {
+          if (item.booking.payment.amountMoney == 0) {
+            this.schedule = []
+            this.schedule.push(item);
+          }
+        });
       });
   }
 
