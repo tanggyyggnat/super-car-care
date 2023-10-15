@@ -1,45 +1,50 @@
 <app-sidebar>
-    <div class="pt-4 p-3">
-        <div class="flex justify-content-between">
-            <div class="text-4xl font-bold"> History </div>
-            <div>
-                <span class="p-input-icon-left">
-                    <i class="pi pi-search"></i>
-                    <input type="text" pInputText placeholder="Search..." />
-                </span>
-            </div>
-        </div>
-        <p-divider></p-divider>
+  <div class="pt-4 p-3">
+    <div class="flex justify-content-between">
+      <div class="text-4xl font-bold"> History </div>
+      <div>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input type="text" pInputText placeholder="Search..." />
+        </span>
+      </div>
     </div>
+    <p-divider></p-divider>
+  </div>
 
-    <div class="px-3">
-        <p-table [value]="products"
-        selectionMode="single" 
-        (onRowSelect)="onRowSelect($event)"
+  <div class="px-3">
+    <ng-container *ngIf="booking.length; else noData">
+      <p-table [value]="booking" selectionMode="single" (onRowSelect)="onRowSelect($event)"
         styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }">
-            <ng-template pTemplate="header">
-                <tr>
-                    <th>Booking</th>
-                    <th>Service</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Customer Name</th>
-                    <th>Car brand</th>
-                    <th>Car License</th>
-                    <th>Status</th>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-product>
-                <tr [pSelectableRow]="product">
-                    <td>{{ product.id }}</td>
-                    <td>{{ product.serviceType }}</td>
-                    <td>{{ product.date }}</td>
-                    <td>{{ product.time}}</td>
-                    <td>{{ product.customerName}}</td>
-                    <td>{{ product.carbrand}}</td>
-                    <td>{{ product.carLicense}}</td>
-                    <td><p-tag [value]="product.status" [severity]="getSeverity(product.status)"></p-tag></td>
-            </ng-template>
-        </p-table>
-    </div>
+        <ng-template pTemplate="header">
+          <tr>
+            <th>No</th>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Car License</th>
+            <th>Car brand</th>
+            <th class="text-center">Status</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-booking let-rowIndex="rowIndex">
+          <tr [pSelectableRow]="booking">
+            <td>{{ rowIndex +1 }}</td>
+            <td>{{ booking.serviceType.serviceTypeName }}</td>
+            <td>{{ booking.appointmentDateTime | date:'dd/MM/yy' }}</td>
+            <td>{{ booking.time}}</td>
+            <td>{{ booking.car.licensePlate}}</td>
+            <td>{{ booking.car.carBrand}}</td>
+            <td class="text-center"><p-tag [value]="booking.stepStatus"
+                [severity]="getSeverity(booking.stepStatus)"></p-tag></td>
+        </ng-template>
+      </p-table>
+    </ng-container>
+    <ng-template #noData>
+      <div class="flex flex-column justify-content-center align-items-center h-30rem">
+        <i class="pi pi-info-circle text-gray-500" style="font-size: 4rem;"></i>
+        <p class="text-gray-500">No data</p>
+      </div>
+    </ng-template>
+  </div>
 </app-sidebar>
