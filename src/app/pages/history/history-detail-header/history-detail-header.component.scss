@@ -1,27 +1,83 @@
 .step-container {
-    width: 60%;
+    width: 80%;
 }
 
 :host ::ng-deep .p-steps .p-steps-item:before {
     border-color: #5CB66B;
 }
 
-:host ::ng-deep .p-steps .p-steps-item .p-menuitem-link .p-steps-number {
-    color: #5CB66B;
-    border: 1px solid #e9ecef;
-    background: #5CB66B;
-    min-width: 4rem;
-    height: 4rem;
-    line-height: 2rem;
-    font-size: 1.143rem;
-    z-index: 1;
-    border-radius: 50%;
+// :host ::ng-deep .p-steps .p-steps-item .p-menuitem-link .p-steps-number {
+// color: #5CB66B;
+// border: 1px solid #e9ecef;
+// background: #5CB66B;
+// min-width: 4rem;
+// height: 4rem;
+// line-height: 2rem;
+// font-size: 1.143rem;
+// z-index: 1;
+// border-radius: 50%;
+// }
+
+// :host ::ng-deep .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
+//     background-color: #757575 !important;
+// }
+
+// :host ::ng-deep .p-steps .p-steps-item .p-menuitem-link .p-steps-title:hover {
+//     cursor: pointer;
+// }
+
+// :host ::ng-deep .p-steps-number:hover {
+//     cursor: pointer;
+// }
+
+// .customstepper .ui-state-highlight {
+//     background: #343a40;
+
+// }
+
+// .customstepper .ui-steps .ui-steps-item.ui-state-highlight .ui-menuitem-link {
+//     color: #fff;
+// }
+
+// .customstepper .ui-steps .ui-steps-item.ui-state-disabled {
+//     background: #ddd;
+// }
+
+// .customstepper .ui-steps .ui-steps-item.ui-state-disabled .ui-menuitem-link {
+//     color: green;
+// }
+
+:host ::ng-deep .p-timeline-event-content {
+    flex: 0;
+    width: 100px;
+    margin-left: -7.5px;
 }
 
-:host ::ng-deep .p-steps .p-steps-item .p-menuitem-link .p-steps-title:hover {
-    cursor: pointer;
+:host ::ng-deep .p-timeline-event-opposite {
+    flex: 0;
 }
 
-:host ::ng-deep .p-steps-number:hover {
-    cursor: pointer;
+:host ::ng-deep .p-timeline-event-marker {
+    width: 60px;
+    height: 60px;
+    background-color: #5CB66B;
+    border-color: #5CB66B;
+}
+
+:host ::ng-deep .p-timeline-event-separator {
+    display: flex;
+    flex-direction: column;
+}
+
+:host ::ng-deep .p-timeline.p-timeline-horizontal .p-timeline-event-connector {
+    background-color: transparent;
+}
+
+.seperate {
+    position: absolute;
+    margin-top: 60px;
+    width: 750px;
+    height: 2px;
+    background-color: #dee2e6;
+    overflow: hidden;
 }

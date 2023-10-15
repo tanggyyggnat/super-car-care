@@ -14,30 +14,43 @@ import { PrimeNGModule } from 'src/app/modules/primeng.module';
   ]
 })
 export class HistoryDetailHeaderComponent {
+  activeIndex: number = 0;
 
-  @Input() booking: any;
-
-  step: MenuItem[] = [
-    {
-      title: '',
-      label: 'Check In',
-    },
-    {
-      title: '',
-      label: 'Process',
-    },
-    {
-      title: '',
-      label: 'Payment',
-    },
-    {
-      title: '',
-      label: 'Check Out',
+  private _booking: any;
+  public get booking(): any {
+    return this._booking;
+  }
+  @Input()
+  public set booking(value: any) {
+    this._booking = value;
+    switch (this._booking.status) {
+      case 'IN_PROCESS':
+        this.activeIndex = 0;
+        break;
+      case 'WAITING':
+        this.activeIndex = 1;
+        break;
+      case 'CANCEL':
+        this.activeIndex = 2;
+        break;
+      case 'COMPLETE':
+        this.activeIndex = 3;
+        break;
+      default:
+        break;
     }
+  }
+
+  step: String[] = [
+    'Check In',
+    'Process',
+    'Payment',
+    'Check Out',
   ];
 
   @Output() OnchangeIndex = new EventEmitter<number>();
   changeIndex(index: number) {
+    this.activeIndex = index;
     this.OnchangeIndex.emit(index);
   }
 }
