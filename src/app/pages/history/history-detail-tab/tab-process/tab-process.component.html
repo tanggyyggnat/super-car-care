@@ -1,25 +1,17 @@
-<div style="height: 100%" class="shadow-2 border-round-sm p-5 bg-white overflow-y-auto w-full">
-  <div class="bg-white align-self-center pl-7  flex flex-column text-center gap-0  h-full">
-    <div class="flex flex-row gap-3 h-fit" *ngFor="let event of processDetails">
-
-      <svg width="21" height="100%" viewBox="0 0 21 95" fill="none">
-        <circle cx="10.5" cy="10.5" r="10.5" transform="rotate(-90 10.5 10.5)" fill="black"/>
-        <line x1="10.5" y1="100%" x2="10.5" stroke="black"/>
-      </svg>
-      <div class="text-lg flex flex-row gap-3">
-        <div class="align-self-start w-fit text-left">
-          <p>{{ event.date }}</p>
-        </div>
-        <div class="align-self-start w-fit text-left">
-          <p>{{ event.time }}</p>
-        </div>
-        <div class="align-self-start w-fit text-left">
-          <p class="font-bold">{{ event.name }}</p>
-          <div class="w-fit flex-wrap">
-            <p>{{ event.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="flex justify-content-start p-3" >
+  <p-timeline [value]="listProcess" styleClass="customized-timeline">
+    <ng-template pTemplate="marker" let-event>
+      <span class="border-circle p-2 shadow-2" 
+        [style.backgroundColor]="event.stepStatus == 'COMPLETE' ? '#5CB66B' : 'gray'" 
+        [style.Color]="'white'">
+      <i [ngClass]="event.stepStatus == 'COMPLETE' ? 'pi pi-check' : 'pi pi-info-circle'"></i>
+      </span>
+    </ng-template>
+    <ng-template pTemplate="content" let-event>
+      <div class="font-bold"> {{ event.subService.subServiceName }} </div>
+      <ng-container *ngIf="event.stepStatus == 'COMPLETE'">
+        <div class="text-gray-500">Complete at : {{ event.timestamp | date:'h:mm a dd/MM/yy' }} </div>
+      </ng-container>
+    </ng-template>
+  </p-timeline>
 </div>
