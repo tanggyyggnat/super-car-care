@@ -15,4 +15,8 @@ import { PrimeNGModule } from 'src/app/modules/primeng.module';
 export class TabCheckOutComponent {
   @Input() booking: any;
 
+
+  print() {
+    window.print();
+  }
 }

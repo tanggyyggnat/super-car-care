@@ -1,4 +1,8 @@
 <ng-container *ngIf="booking.payment?.stepStatus == 'COMPLETE';else noPrice">
+  <div class="flex justify-content-end">
+    <button pButton class="p-button-secondary" icon="pi pi-print" label="Print receipt" (click)="print()"></button>
+
+  </div>
 
   <div class="border-round-lg shadow-2 p-3 mt-3 px-6">
     <div class="flex flex-column align-items-center justify-content-center">
