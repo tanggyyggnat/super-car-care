@@ -1,158 +1,212 @@
 <app-sidebar>
-
-    <div style="height: 10vh;" class="pt-4 p-3">
-      <div class="flex justify-content-between">
-        <div class="text-4xl font-bold">Reservation Details</div>
-      </div>
+  <div class="py-3">
+    <p-breadcrumb class="max-w-full" [model]="items"></p-breadcrumb>
+    <div class="px-3 -mt-2">
       <p-divider></p-divider>
     </div>
-    <section style="height: 79%;" class="relative flex flex-row gap-0">
-      <section style="width: 40vw" class="border-1 border-left-none border-top-none border-bottom-none">
-        <div class="flex flex-column gap-3">
-          <div style="width: 100%" class="flex flex-column pt-3 justify-content-center align-items-center">
-            <div class="w-8 align-content-start p-3 pl-0">
-              <h1>Service Details</h1>
-            </div>
-            <div class="flex flex-column border-1 border-round-lg w-fit gap-0">
-              <div class="p-3 pt-2 pb-2  flex flex-row gap-5">
-                <div class="w-full"><p>Car check up Service</p></div>
-              </div>
-              <div class="p-3 pt-2 pb-2 border-top-1 flex flex-row gap-5">
-                <div class="w-8rem"><p>23-11-2023</p></div>
-                <div class="w-8rem"><p>Time 09:00</p></div>
-              </div>
-              <div class="p-3 pt-2 pb-2 border-top-1 flex flex-row gap-5">
-                <div class="w-8rem"><p>BMW-5</p></div>
-                <div class="w-8rem"><p>SSE-2345</p></div>
-              </div>
-            </div>
-          </div>
-  
-          <div style="width: 100%" class="flex flex-column pt-3 justify-content-center align-items-center">
-            <div class="w-8 align-content-start p-3 pl-0">
-              <h1>Payment Details</h1>
-            </div>
-            <section class="flex flex-column border-1 border-round-lg w-fit gap-0">
-              <div class="p-3 pt-2 pb-2  flex flex-row gap-5">
-                <div class="w-8rem"><p>Payment Status</p></div>
-                <div class="w-8rem"><p>101</p></div>
-              </div>
-              <div class="p-3 pt-2 pb-2 border-top-1 flex flex-row gap-5">
-                <div class="w-8rem"><p>Payment Method</p></div>
-                <div class="w-8rem"><p>101</p></div>
-              </div>
-              <div class="p-3 pt-2 pb-2 border-top-1 flex flex-row gap-5">
-                <div class="w-8rem"><p>Payment Date</p></div>
-                <div class="w-8rem"><p>101</p></div>
-              </div>
-              <div class="p-3 pt-2 pb-2 border-top-1 flex flex-row gap-5">
-                <div class="w-8rem"><p>Total Due</p></div>
-                <div class="w-8rem"><p>101</p></div>
-              </div>
-            </section>
-            <div class="pt-5 w-fit align-content-start p-3 pl-0">
-              <div class="cursor-pointer p-2 pl-5 pr-5 border-round-2xl border-1">
-                <p class="text-sm">show slip</p>
-              </div>
-            </div>
-          </div>
+  </div>
+
+  <div class="grid p-3">
+    <div class="col-8">
+      <div class="shadow-2 border-round-sm p-3">
+        <div class="text-lg font-bold">Customer Details</div>
+        <div class="flex mt-2 text-sm">
+          <div class="key">Customer Name :</div>
+          <div>{{ booking.customer?.custName}} {{ booking.customer?.custSurname }}</div>
         </div>
-      </section>
-  
-      <section style="height: 100%; width: 60vw" class="p-5 pt-0">
-        <div  class="pt-3 w-fit">
-          <div [style]="{background: '#4B527E'}" class="pt-3 table-header align-self-center w-full align-content-start">
-            <h1 class="text-white h-2rem">Process</h1>
-          </div>
-          <thead>
-            <tr class=" text-center m-0 p-2">
-              <th class="w-3rem">Order</th>
-              <th class="w-12rem">Process</th>
-              <th class="w-9rem">Steps</th>
-              <th class="w-8rem">Date</th>
-              <th class="w-5rem">Time</th>
-              <th class="w-5rem"><i></i> </th>
-            </tr>
-          </thead>
-  
-  
-  
-          <tr class="text-center" *ngFor="let detail of products; let i = index">
-            <td >{{ i + 1 }}</td>
-            <td >{{ detail.name }}</td>
-            <td >{{ detail.steps }}</td>
-            <td >{{ detail.date }}</td>
-            <td >{{ detail.time }}</td>
-            <td ><i (click)="showProcess()" class="cursor-pointer pi pi-cog"></i> </td>
-          </tr>
+
+        <div class="flex mt-2 text-sm">
+          <div class="key">Customer Phone :</div>
+          <div>{{ booking.customer?.custPhone }}</div>
         </div>
-  
-      </section>
-    </section>
-  
-    <div style="width: 100%; height: 10%" class="flex flex-row  border-1 border-bottom-none border-left-none border-right-none">
-      <section style="width: 100%" class="flex flex-column justify-content-center align-items-end ">
-        <div class="text-center flex flex-row gap-5 pr-5">
-          <p-button (click)="showStock()" label="add stock usage" class="p-button-sm"
-                    [style]="{ outline: 'none', width: '17vw', background: '#4B527E' }">
-          </p-button>
-  
-  
-          <p-button (click)="showSubService()" label="sub-service" class="p-button-sm"
-                    [style]="{ outline: 'none', width: '17vw', background: '#4B527E' }">
-          </p-button>
+
+        <div class="flex mt-2 text-sm">
+          <div class="key">Customer Email :</div>
+          <div>{{ booking.customer?.custEmail }}</div>
         </div>
-      </section>
+      </div>
     </div>
-  
-    <!--//Stock-->
-    <p-dialog header="Stock" [(visible)]="stockvisible" [modal]="true" [style]="{ width: '30vw' }" [draggable]="false" [resizable]="false">
-      <div *ngFor="let item of washing; let i = index" class="flex flex-row gap-3 pt-2 pr-4">
-        <div class="w-full flex flex-row gap-3">
-          <p-checkbox [(ngModel)]="stockCheckBox[i]" [binary]="true" inputId="binary" (onChange)="onStockCheckboxChange(i)"></p-checkbox>
-          <label class="text-lg">{{ item.name }}</label>
+
+    <div class="col-4">
+      <div class="shadow-2 border-round-sm p-3">
+        <div class="text-lg font-bold">Service Detail</div>
+        <div class="flex mt-2 text-sm">
+          <div class="mr-2">Service Type :</div>
+          <div>{{ booking.serviceType?.serviceTypeName }}</div>
         </div>
-        <p-inputNumber [(ngModel)]="value[i]" inputId=""></p-inputNumber>
-      </div>
-    </p-dialog>
-  
-    <!--//SubService-->
-    <p-dialog header="Sub-Service" [(visible)]="subservicevisible" [modal]="true" [style]="{ width: '30vw' }" [draggable]="false" [resizable]="false">
-      <div *ngFor="let item of washing; let i = index" class="flex flex-row gap-3 pt-3 pr-4">
-        <div class="w-full flex flex-row gap-3">
-          <p-checkbox [(ngModel)]="subServiceCheckBox[i]" [binary]="true" inputId="binary" (onChange)="onSubServiceCheckboxChange(i)"></p-checkbox>
-          <label class="text-lg">{{ item.name }}</label>
+
+        <div class="flex mt-2 text-sm">
+          <div class="mr-2">Service Date :</div>
+          <div>{{ booking.appointmentDateTime | date:'dd/MM/yy' }}</div>
         </div>
-        <h1 class="subservice_price">{{ item.price }}</h1>
-      </div>
-    </p-dialog>
-  
-    <!--//Process Edit-->
-    <p-dialog header="Update Process" [(visible)]="processVisible" [modal]="true" [style]="{ width: '51vw' }" [draggable]="false" [resizable]="false">
-      <div class="relative justify-content-center flex flex-row gap-3 pt-6 pr-4">
-        <div style="bottom: 10%" class="fixed flex flex-row gap-5">
-          <div class="w-auto">
-            <label class="text-base pb-2">Steps</label>
-            <p-dropdown  [options]="optionsSteps" [(ngModel)]="selectedSteps" optionLabel="steps" ></p-dropdown>
-          </div>
-  
-          <div class="w-auto">
-            <label class="text-base pb-2">Date</label>
-            <p-calendar [(ngModel)]="selectedDate"></p-calendar>
-          </div>
-  
-          <div class="w-auto">
-            <label class="text-base pb-2">Time</label>
-            <p-calendar [(ngModel)]="selectedTime" [timeOnly]="true"></p-calendar>
-          </div>
-  
-          <div class="w-auto align-self-end">
-            <p-button (click)="processVisible == false" label="save" class="p-button-sm"
-                      [style]="{ padding: '4px', outline: 'none',height: '2rem', width: '6vw', background: '#4B527E' }">
-            </p-button>
-          </div>
+
+        <div class="flex mt-2 text-sm">
+          <div class="mr-2">Car :</div>
+          <div>{{ booking.car?.licensePlate }}-{{ booking.car?.carBrand }}</div>
         </div>
       </div>
-    </p-dialog>
-  </app-sidebar>
-  
+    </div>
+
+    <p-divider class="w-full"></p-divider>
+  </div>
+
+  <div class="grid p-3 -mt-5">
+    <ng-container *ngIf="listProcess.length; else noSubService">
+      <div class="col-8">
+        <p-table [value]="listProcess" selectionMode="single" styleClass="p-datatable-striped h-27rem"
+          [scrollable]="true" scrollHeight="400px">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>No</th>
+              <th>Process</th>
+              <th>Steps</th>
+              <th>Date</th>
+              <th><i></i> </th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+            <tr>
+              <td>{{ rowIndex + 1 }}</td>
+              <td>{{ item.subService?.subServiceName }}</td>
+              <td>{{ item.stepStatus }}</td>
+              <td>{{ item.timestamp | date:'h:mm a dd/MM/yy' }}</td>
+              <td class="p-2">
+                <i (click)="showProcess(item.id)" class="cursor-pointer pi pi-cog mr-3"></i>
+                <i (click)="deleteProcess(item.id)" class="cursor-pointer pi pi-trash text-red-600"></i>
+              </td>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+              <div>TOTAL PRICE</div>
+              <div>{{ totalPrice }} Baht</div>
+            </div>
+          </ng-template>
+        </p-table>
+      </div>
+    </ng-container>
+    <ng-template #noSubService>
+      <div class="col-8 shadow-2 border-round-sm">
+        <div class="flex flex-column justify-content-center align-items-center h-27rem">
+          <i class="pi pi-info-circle text-gray-500" style="font-size: 3rem;"></i>
+          <div class="mt-2 text-gray-500">No SubService Now!</div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-container *ngIf="listBookingStock.length; else noStock">
+      <div class="col-4">
+        <p-table [value]="listBookingStock" styleClass="h-27rem" [scrollable]="true" scrollHeight="400px">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>No</th>
+              <th>Name</th>
+              <th class="text-center">Unit</th>
+              <th></th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+            <tr>
+              <td>{{ rowIndex + 1 }}</td>
+              <td>{{ item.stock?.stockName }}</td>
+              <td class="text-center">{{ item.quantityUsage }}</td>
+              <td>
+                <i (click)="deleteStock(item.id)" class="cursor-pointer pi pi-trash text-red-600"></i>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </ng-container>
+    <ng-template #noStock>
+      <div class="col-4 shadow-2 border-round-sm">
+        <div class="flex flex-column justify-content-center align-items-center h-28rem">
+          <i class="pi pi-info-circle text-gray-500" style="font-size: 3rem;"></i>
+          <div class="mt-2 text-gray-500">No Inventory!</div>
+        </div>
+      </div>
+    </ng-template>
+
+    <p-divider class="w-full"></p-divider>
+  </div>
+
+  <div class="">
+    <div class="flex justify-content-between mx-3 -mt-4">
+      <div>
+        <button pButton (click)="showSubService()" label="Add Sub-Service" icon="" class="p-button-sm"
+          [style]="{ border: '1px solid #4B527E', width: '17vw', background: 'white', color:'#4B527E' }">
+        </button>
+        <button pButton (click)="showStock()" label="Add Inventory Usage" icon="" class="p-button-sm ml-2"
+          [style]="{ border: '1px solid #4B527E', width: '17vw', background: 'white', color:'#4B527E' }">
+        </button>
+      </div>
+      <div>
+        <button label="Submit" icon="pi pi-save" class="p-button-sm" pButton (click)="submit()"
+          [style]="{ border: 'none', width: '17vw', background: '#4B527E' }">
+        </button>
+      </div>
+    </div>
+  </div>
+</app-sidebar>
+
+<!--//Stock-->
+<p-dialog header="Inventory" [(visible)]="stockvisible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+  [resizable]="false">
+  <div class="flex justify-content-end">
+    <input pInputText class="mr-2 border-none text-center" value="In Stock" disabled>
+    <input pInputText class="border-none text-center" value="Usage" disabled>
+  </div>
+  <div *ngFor="let item of listStock; let i = index" class="flex justify-content-between mb-2">
+    <div class="w-full flex flex-row gap-3">
+      <label class="text-lg">{{ item.stockName }}</label>
+    </div>
+    <p-inputNumber [(ngModel)]="listStock[i].stockQuantity" class="mr-2 text-center" [disabled]="true"></p-inputNumber>
+    <p-inputNumber (onInput)="onInputValueChange($event,i)"></p-inputNumber>
+  </div>
+  <p-divider></p-divider>
+  <div class="flex justify-content-end">
+    <button pButton label="Add Inventory" icon="pi pi-check" class="w-full p-button-sm p-button-secondary"
+      (click)="addInventory()"></button>
+  </div>
+</p-dialog>
+
+<!--//SubService-->
+<p-dialog header="Sub-Service" [(visible)]="subservicevisible" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <div *ngFor="let item of listSubService; let i = index" class="flex justify-content-between">
+    <div>
+      <p-checkbox [(ngModel)]="listBookingStockUsed[i].selected" [binary]="true" inputId="binary"
+        class="mr-3"></p-checkbox>
+      <label class="text-lg">{{ item.subServiceName }}</label>
+    </div>
+    <h1 class="subservice_price text-right">{{ item.price }} Baht</h1>
+  </div>
+  <p-divider></p-divider>
+  <div class="flex justify-content-end">
+    <button pButton label="Add Inventory" icon="pi pi-check" class="w-full p-button-sm p-button-secondary"
+      (click)="addSubService()"></button>
+  </div>
+</p-dialog>
+
+<!--//Process Edit-->
+<p-dialog header="Update Process" [(visible)]="processVisible" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <div class="grid">
+    <div class="col-2">
+      <label class="text-base">Steps</label>
+    </div>
+    <div class="col-10">
+      <p-dropdown [options]="optionsSteps" [(ngModel)]="selectedSteps" optionLabel="label" optionValue="value"
+        appendTo="body" styleClass="w-full"></p-dropdown>
+    </div>
+  </div>
+
+  <div>
+    <p-divider></p-divider>
+    <button pButton label="Update" icon="pi pi-check" class="w-full p-button-sm p-button-secondary"
+      (click)="updateProcess()"></button>
+  </div>
+</p-dialog>
