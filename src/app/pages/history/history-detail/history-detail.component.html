@@ -7,12 +7,14 @@
   </div>
 
   <div class="mx-3 -mt-3">
-    <history-detail-header [customer]="customer" (OnchangeIndex)="changeIndex($event)">
+    <history-detail-header 
+      [booking]="booking"
+      (OnchangeIndex)="changeIndex($event)">
     </history-detail-header>
   </div>
 
   <div class="mx-3 px-3">
-    <history-detail-tab [activeIndex]="activeIndex">
+    <history-detail-tab [activeIndex]="activeIndex" [booking]="booking">
     </history-detail-tab>
   </div>
 </app-sidebar>
