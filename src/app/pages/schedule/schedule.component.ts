@@ -44,6 +44,6 @@ export class ScheduleComponent implements OnInit {
 
   onRowSelect(event: any): void {
     console.log(event);
-    this.router.navigate(['schedule/detail/', event.data.id]);
+    this.router.navigate(['schedule/detail/', event.data.bookingId]);
   }
 }
