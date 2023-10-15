@@ -24,6 +24,10 @@ input {
   padding: 0;
 }
 
+:host ::ng-deep.p-button {
+  padding: 0.5rem 1.5rem;
+}
+
 .selected {
   color: green;
 }
