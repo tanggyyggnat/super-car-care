@@ -1,20 +1,34 @@
 <app-sidebar>
   <div class="py-3">
-    <p-breadcrumb class="max-w-full" [model]="items"></p-breadcrumb>
+    <div class="flex justify-content-between">
+      <p-breadcrumb class="max-w-full" [model]="items"></p-breadcrumb>
+      <div [hidden]="booking.stepStatus == 'CANCEL'">
+        <button pButton label="Cancle Booking" icon="pi pi-times-circle" class="p-button-danger p-button-outlined"
+          (click)="cancleBooking()">
+        </button>
+      </div>
+    </div>
     <div class="px-3 -mt-2">
       <p-divider></p-divider>
     </div>
   </div>
 
   <div class="mx-3 -mt-3">
-    <history-detail-header 
-      [booking]="booking"
-      (OnchangeIndex)="changeIndex($event)">
+    <history-detail-header [booking]="booking" (OnchangeIndex)="changeIndex($event)">
     </history-detail-header>
   </div>
 
-  <div class="mx-3 px-3">
-    <history-detail-tab [activeIndex]="activeIndex" [booking]="booking">
-    </history-detail-tab>
-  </div>
+  <ng-container *ngIf="booking.stepStatus != 'CANCEL'; else noCancel">
+    <div class="mx-3 px-3">
+      <history-detail-tab [activeIndex]="activeIndex" [booking]="booking">
+      </history-detail-tab>
+    </div>
+  </ng-container>
+  <ng-template #noCancel>
+    <div class="flex flex-column h-28rem justify-content-center align-items-center">
+      <i class="pi pi-info-circle text-gray-500" style="font-size: 5rem;"></i>
+      <div class="text-2xl text-gray-500 mt-2">Booking has been canceled</div>
+      <p class="text-gray-500">You can't see the detail of this booking</p>
+    </div>
+  </ng-template>
 </app-sidebar>

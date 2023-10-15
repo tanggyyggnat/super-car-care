@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MenuItem } from 'primeng/api';
+import { ConfirmationService, MenuItem, Message, MessageService } from 'primeng/api';
 import { BookingService } from 'src/app/service/booking/booking.service';
 
 @Component({
@@ -25,6 +25,8 @@ export class HistoryDetailComponent {
   ];
 
   constructor(
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService,
     private activatedRoute: ActivatedRoute,
     private bookingService: BookingService
   ) {
@@ -49,5 +51,26 @@ export class HistoryDetailComponent {
 
   changeIndex(index: number) {
     this.activeIndex = index;
+  }
+
+  cancleBooking() {
+    this.confirmationService.confirm({
+      header: 'Confirmation',
+      message: 'Are you sure that you want to cancel this booking?',
+      acceptLabel: 'Confirm',
+      rejectLabel: 'Cancel',
+      accept: () => {
+        this.bookingService
+          .cancelBooking(this.booking.id, "CANCEL")
+          .subscribe((res: any) => {
+            this.getCustomer();
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Success',
+              detail: 'Booking has been cancelled.',
+            });
+          });
+      },
+    });
   }
 }
