@@ -31,10 +31,10 @@ export class InventoryService {
   }
 
   editInventory(id: any, stockQuantity: number) {
-    return this.http.patch(`http://localhost:3000/api/stock/${id}`, stockQuantity);
+    return this.http.patch(`http://localhost:3000/api/stock/${id}`, { stockQuantity });
   }
 
-  searchStock(stockName: any){
+  searchStock(stockName: any) {
     return this.http.get(`http://localhost:3000/api/stock/search`, stockName);
   }
 }
