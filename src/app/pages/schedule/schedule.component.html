@@ -13,34 +13,43 @@
       <p-divider></p-divider>
     </div>
 
-    <div class="p-4 px-4 pb-0">
-      <p-table [value]="schedule" selectionMode="single" (onRowSelect)="onRowSelect($event)"
-        [tableStyle]="{ 'min-width': '50rem' }">
-        <ng-template pTemplate="header">
-          <tr class="text-center m-0 p-2">
-            <th class="text-center">No.</th>
-            <th>Service</th>
-            <th>Date Time</th>
-            <th>Customer Name</th>
-            <th>Car brand</th>
-            <th>Car License</th>
-            <th class="text-center">Status</th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-schedule let-rowIndex="rowIndex">
-          <tr class="text-center m-0 p-2" [pSelectableRow]="schedule">
-            <td>{{ rowIndex + 1 }}</td>
-            <td>{{ schedule.booking.serviceType.serviceTypeName }}</td>
-            <td>{{ schedule.booking.appointmentDateTime | date:'dd/MM/yy' }}</td>
-            <td>{{ schedule.booking.customer.custName }} {{schedule.booking.customer.custSurname}}</td>
-            <td>{{ schedule.booking.car.carBrand}}</td>
-            <td>{{ schedule.booking.car.licensePlate}}</td>
-            <td class="text-center">
-              <p-tag class="cursor-pointer" [value]="schedule.booking.stepStatus" severity="warning"></p-tag>
-            </td>
-          </tr>
-        </ng-template>
-      </p-table>
-    </div>
+    <ng-container *ngIf="schedule.length; else noData">
+      <div class="p-4 px-4 pb-0">
+        <p-table [value]="schedule" selectionMode="single" (onRowSelect)="onRowSelect($event)"
+          [tableStyle]="{ 'min-width': '50rem' }">
+          <ng-template pTemplate="header">
+            <tr class="text-center m-0 p-2">
+              <th class="text-center">No.</th>
+              <th>Service</th>
+              <th>Date Time</th>
+              <th>Customer Name</th>
+              <th>Car brand</th>
+              <th>Car License</th>
+              <th class="text-center">Status</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-schedule let-rowIndex="rowIndex">
+            <tr class="text-center m-0 p-2" [pSelectableRow]="schedule">
+              <td>{{ rowIndex + 1 }}</td>
+              <td>{{ schedule.booking.serviceType.serviceTypeName }}</td>
+              <td>{{ schedule.booking.appointmentDateTime | date:'dd/MM/yy' }}</td>
+              <td>{{ schedule.booking.customer.custName }} {{schedule.booking.customer.custSurname}}</td>
+              <td>{{ schedule.booking.car.carBrand}}</td>
+              <td>{{ schedule.booking.car.licensePlate}}</td>
+              <td class="text-center">
+                <p-tag class="cursor-pointer" [value]="schedule.booking.stepStatus" severity="warning"></p-tag>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </ng-container>
+    <ng-template #noData>
+      <div class="flex flex-column h-28rem justify-content-center align-items-center">
+        <i class="pi pi-info-circle text-gray-500" style="font-size: 5rem;"></i>
+        <div class="text-2xl text-gray-500 mt-2">No Schedule</div>
+        <p class="text-gray-500">You haven't work to do now!</p>
+      </div>
+    </ng-template>
   </section>
 </app-sidebar>
