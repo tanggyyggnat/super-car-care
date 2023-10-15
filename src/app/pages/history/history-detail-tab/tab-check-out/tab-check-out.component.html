@@ -1,48 +1,57 @@
-<div class="border-round-lg shadow-2 p-3 mt-3 px-6">
-  <div class="flex flex-column align-items-center justify-content-center">
-    <img src="../../../assets/donePayment.png" height="200" width="200">
-    <div class="text-xl text-green-600 font-bold">Payment Successfull!</div>
-  </div>
+<ng-container *ngIf="booking.payment?.stepStatus == 'COMPLETE';else noPrice">
 
-  <p-divider></p-divider>
-  <div class="grid py-5">
-    <div class="col-6">
-      <div class="mx-7">
-        <div>
-          <div class="text-xl font-bold mb-2">Payment details</div>
-          <div class="mb-2">Service Type :Car check up Service</div>
-          <div class="mb-2">Start Date : 09:00 AM 23/11/2023</div>
-          <div>Finish Date : 12:00 AM 23/11/2023 </div>
-        </div>
-      </div>
+  <div class="border-round-lg shadow-2 p-3 mt-3 px-6">
+    <div class="flex flex-column align-items-center justify-content-center">
+      <img src="../../../assets/donePayment.png" height="200" width="200">
+      <div class="text-xl text-green-600 font-bold">Payment Successfull!</div>
     </div>
-    <div class="col-6">
-      <div class="mx-7">
-        <div>
-          <div class="text-xl font-bold mb-2">Payment Information</div>
-          <div class="mb-2">Paymeny Method : Mobile-Banking</div>
-          <div class="mb-2">Paid Date : 09:00 AM 24/11/2023</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <p-divider></p-divider>
-  <div class="grid py-5">
-    <div class="col-6">
-      <div class="mx-7">
-        <div>
-          <div class="text-lg mb-2">Total : 500 THB</div>
-          <div class="text-lg">Discount : 0 THB</div>
+    <p-divider></p-divider>
+    <div class="grid py-5">
+      <div class="col-6">
+        <div class="mx-7">
+          <div>
+            <div class="text-xl font-bold mb-2">Payment details</div>
+            <div class="mb-2">Service Type : {{ booking.serviceType?.serviceTypeName}}</div>
+            <div class="mb-2">Start Date : {{ booking.appointmentDateTime | date:'h:mm a dd/MM/yy'}} </div>
+            <div>Finish Date : {{ booking.payment?.paymentDate | date:'h:mm a dd/MM/yy'}} </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mx-7">
+          <div>
+            <div class="text-xl font-bold mb-2">Payment Information</div>
+            <div class="mb-2">Paymeny Method : {{ booking.payment?.paymentMethod }}</div>
+            <div class="mb-2">Paid Date : {{ booking.payment?.paymentDate | date:'h:mm a dd/MM/yy'}}</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-6">
-      <div class="mx-7">
-        <div>
-          <div class="flex align-items-center text-2xl font-bold mt-2">Net Total : 500 THB</div>
+
+    <p-divider></p-divider>
+    <div class="grid py-5">
+      <div class="col-6">
+        <div class="mx-7">
+          <div>
+            <div class="text-lg mb-2">Total : {{ booking.payment?.amountMoney}} THB</div>
+            <div class="text-lg">Discount : 0 THB</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mx-7">
+          <div>
+            <div class="flex align-items-center text-2xl font-bold mt-2">Net Total : {{ booking.payment?.amountMoney}} THB</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</ng-container>
+<ng-template #noPrice>
+  <div class="flex flex-column h-30rem justify-content-center align-items-center">
+    <i class="pi pi-info-circle text-gray-500 mb-3" style="font-size: 4rem;"></i>
+    <div class="text-gray-500">Waiting for paid!</div>
+  </div>
+</ng-template>

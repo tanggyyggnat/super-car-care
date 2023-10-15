@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PrimeNGModule } from 'src/app/modules/primeng.module';
 
 @Component({
@@ -13,5 +13,6 @@ import { PrimeNGModule } from 'src/app/modules/primeng.module';
   ]
 })
 export class TabCheckOutComponent {
+  @Input() booking: any;
 
 }
