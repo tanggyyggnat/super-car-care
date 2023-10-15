@@ -15,15 +15,15 @@ export class SubserviceService {
   // ?,[]: subService, booking
 
   getSubservice() {
-    return this.http.get('http://localhost:3000/api/schedule');
+    return this.http.get('http://localhost:3000/api/subService');
   }
 
   getSubserviceById(id: number) {
-    return this.http.get(`http://localhost:3000/api/schedule/${id}`);
+    return this.http.get(`http://localhost:3000/api/subService/${id}`);
   }
 
   //{ serviceTypeName }
   createSubservice(serviceTypeName: string) {
-    return this.http.post('http://localhost:3000/api/serviceType', serviceTypeName)
+    return this.http.post('http://localhost:3000/api/subService', serviceTypeName)
   }
 }

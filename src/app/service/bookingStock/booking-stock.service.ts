@@ -15,8 +15,8 @@ export class BookingStockService {
   // ?,[]: 
 
   //{ bookingId, stockId, quantityUsage }
-  createBookingStock(bookingId: number, stockId: number, quantityUsage: number){
-    return  this.http.post(`http://localhost:3000/api/bookingStock/`, { bookingId, stockId, quantityUsage });
+  createBookingStock(bookingId: number, data: any) {
+    return this.http.post(`http://localhost:3000/api/bookingStock/`, { bookingId, data });
   }
 
   getBookingStock() {
@@ -25,5 +25,9 @@ export class BookingStockService {
 
   getBookingStockById(id: number) {
     return this.http.get(`http://localhost:3000/api/bookingStock/${id}`);
+  }
+
+  deleteBookingStock(id: number) {
+    return this.http.delete(`http://localhost:3000/api/bookingStock/${id}`);
   }
 }

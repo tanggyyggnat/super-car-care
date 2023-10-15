@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class PaymentService {
 
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
   // field: id, bookingId, amountMoney, paymentMetodm bankingName, accountName, paymentNumber, paymentDate, paymentSlip, stepStatus
@@ -26,5 +26,9 @@ export class PaymentService {
   //else if (MOBILE_BANKING) => const { bankingName, accountNumber , paymentSlip }
   updatePayment(id: number, paymentMethod: string) {
     return this.http.patch(`http://localhost:3000/api/payment/${id}`, paymentMethod);
+  }
+
+  updatePrice(id: number, amountMoney: number) {
+    return this.http.patch(`http://localhost:3000/api/payment/price/${id}`, { amountMoney });
   }
 }
