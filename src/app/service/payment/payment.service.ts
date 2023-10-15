@@ -24,8 +24,8 @@ export class PaymentService {
 
   // if (CASH) =>
   //else if (MOBILE_BANKING) => const { bankingName, accountNumber , paymentSlip }
-  updatePayment(id: number, paymentMethod: string) {
-    return this.http.patch(`http://localhost:3000/api/payment/${id}`, paymentMethod);
+  updatePayment(id: number, data: any) {
+    return this.http.patch(`http://localhost:3000/api/payment/${id}`, { data });
   }
 
   updatePrice(id: number, amountMoney: number) {
