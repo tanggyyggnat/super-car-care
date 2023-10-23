@@ -1,0 +1,74 @@
+[
+    {
+        "id": "1",
+        "img": "https://img.kapook.com/u/thachapol/5/e5659.jpg",
+        "productName": "สายพานรถยนต์",
+        "price": 2000,
+        "description": "ขายปลีก-ขายส่งสายพานรถยนต์ของแท้สำหรับรถญี่ปุ่น รถยนต์ รถกระบะ รถใหญ่ ทุกรุ่น ทุกยี่ห้อ สายพานเครื่องจักรอุตสาหกรรม ราคาถูก",
+        "favorite": false
+    },
+    {
+        "id": "2",
+        "img": "https://inwfile.com/s-fe/7grp5b.jpg",
+        "productName": "ชาร์ฟรถยนต์",
+        "price": 2000,
+        "description": "ชาร์ฟอก ชาร์ฟก้าน ชาร์ฟกันรุน ชาร์ฟราวลิ้น บูชก้านสูบ",
+        "favorite": false
+    },
+    {
+        "id": "3",
+        "img": "https://kwaithongaec.com/wp-content/uploads/2017/11/040502.jpg",
+        "productName": "แหวนลูกสูบ",
+        "price": 2000,
+        "description": "ป้องกันส่วนผสมอากาศและเชื้อเพลิงรั่วไหลออกจากช่องว่างระหว่างลูกสูบและกระบอกสูบ กับห้องเพลาข้อเหวี่ยงและห้องเผาไหม้ ในระหว่างจังหวะอัดและจุดระเบิด",
+        "favorite": false
+    },
+    {
+        "id": "4",
+        "img": "https://down-th.img.susercontent.com/file/10f0f760753abb220aaf84a8d0c9d164",
+        "productName": "ปะเก็นรถยนต์",
+        "price": 100,
+        "description": "รายละเอียดสินค้า ประเก็นฝาสูบทองแดง W-125 ตัวเก่า หนา 0.5 มิล มีขนาด 54-76",
+        "favorite": false
+    },
+    {
+        "id": "5",
+        "img": "https://www.milework.com/images/thumbnails/1715/1500/detailed/10/61620858.jpg",
+        "productName": "วาล์วไอดีไอเสีย",
+        "price": 140,
+        "description": "(MIO/FINO/NOUVO)วาล์วไอดี+ไอเสียเดิมแท้(ราคา1คู่/2อันไอดี+ไอเสีย) รุ่นMIO/FINO/NOUVO/GF6 สินค้าใช้ทดแทนอะไหล่เดิม   ควรติดตั้งโดยช่างชำนาญงาน",
+        "favorite": false
+    },
+    {
+        "id": "6",
+        "img": "https://www.realtimecarmagazine.com/newsite/wp-content/uploads/2019/11/images-2-4.jpg",
+        "productName": "คอยล์จุดระเบิดรถยนต์",
+        "price": "245",
+        "description": "คอยล์จุดระเบิด(1ชิ้น) Toyota Vios(วีออส) ปี03-12 , Toyota Yaris ปี 06-12 (Made in Japan) PART NO 90919-02240 / 90919-02239 / 90919-02248 / 90919- 02258 / 22448-JA00C",
+        "favorite": false
+    },
+    {
+        "id": "7",
+        "img": "https://www.toyotaps.co.th/images/ready-template/crop-1591597757180.jpg",
+        "productName": "อุปกรณ์ดูแลรักษารถยนต์ แปรงทำความสะอาด ชุดทำความสะอาดรถยนต์,ชุดแปรงล้างรถ6ชิ้น",
+        "price": 400,
+        "description": "ชุดทำความสะอาดรถยนต์ ชุด12ชิ้น 0.75กิโลกรัม พลาสติกนาโนเส้นใยขนแปรง",
+        "favorite": false
+    },
+    {
+        "id": "8",
+        "img": "https://www.ysmintertrade.com/sites/storage/files/users/5/d/b/f/5dbf8584-3e9b-4359-8b00-b7fe5463e080/11.jpg",
+        "productName": "อะไหล่ช่วงล่าง",
+        "price": 2000,
+        "description": "ลูกสูบดิสเบรกหน้า จานดิสเบรกหน้า จานดิสเบรกหลัง ชุดซ่อมครัชบน ชุดซ่อมครัชล่าง ปั๊มครัชบน ปั๊มครัชล่าง ก้ามปูคลัช ยางกันฝุ่นก้ามปูคลัช หวีครัช ลูกปืนครัช จานครัช ลูกปืนครัช ลูกปืนล้อหน้า ลูกปืนปลายเกียร์ บูชคันเกียร์ โซลินอยเกียร์ เสื้อคันเกียร์ สายเกียร์ ขาเลื่อนเกียร์ ยาง แท่นเครื่อง แท่นเกียร์ ผ้าดิสเบรคหน้า-หลัง แผ่นรองผ้าดิสเบรก ยางดิสเบรกหน้า-หลัง เสื้อดิสเบรก แผ่นรับแรงบิด ก้ามเบรกหลัง กระบอกเบรกหลัง สลักคาลิเปอร์เบรค แผงยึดฝัก",
+        "favorite": false
+    },
+    {
+        "id": "9",
+        "img": "https://autoinfo.co.th/uploads/2018/03/3-------------Car-care-value-pack-.jpg",
+        "productName": "ชุดผลิตภัณฑ์ดูแลรถยนต์ Car Care Value Pack",
+        "price": 800,
+        "description": "3M CAR WASH WITH WAX 1000ML. ผลิตภัณฑ์แชมพูล้างรถ สูตรผสมแวกซ์ ทั้งล้างและเคลือบเงาในขั้นตอนเดียว 1 ขวด3M Glass Coater Windshield ผลิตภัณฑ์เคลือบกระจกป้องกันหยดน้ำเกาะ PN08889LT ขนาด 200 มิลลิลิตร 1 ขวด",
+        "favorite": false
+    }
+]

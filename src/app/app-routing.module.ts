@@ -4,6 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 const routes: Routes = [
   {
@@ -33,9 +35,19 @@ const routes: Routes = [
   {
     path: 'schedule',
     loadChildren: () => import('./pages/schedule/schedule.module').then(m => m.ScheduleModule),
-  },{
+  },
+  {
     path: 'inventory',
     component: InventoryComponent,
+  },
+  {
+    path: 'cart',
+    component: CartComponent
+  },
+  {
+    path: 'products',
+    loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsModule),
+
   }
 ];
 

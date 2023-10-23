@@ -1,0 +1,15 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.select:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+}
+
+.detailContainer {
+    min-height: 100px !important;
+    overflow: hidden;
+}

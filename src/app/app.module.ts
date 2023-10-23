@@ -17,6 +17,7 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EmployeeComponent } from './pages/employee/employee.component';
     FooterComponent,
     ScheduleComponent,
     InventoryComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    CartComponent
   ],
   imports: [
     SidebarComponent,

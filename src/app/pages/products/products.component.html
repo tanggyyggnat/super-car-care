@@ -1,0 +1,41 @@
+<app-sidebar>
+  <div class="pt-4 p-3">
+    <div class="flex justify-content-between">
+      <div class="text-4xl font-bold"> Products </div>
+      <div>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input type="text" pInputText placeholder="Search..." />
+        </span>
+      </div>
+    </div>
+    <p-divider></p-divider>
+  </div>
+
+  <div class="m-3 grid">
+    <ng-container *ngFor="let item of listProducts">
+      <div class="col-4 shadow-2 border-round-sm w-full select p-3" (click)="viewDetail(item.id)">
+        <div class="flex justify-content-center">
+          <img src="{{ item.img }}" height="250" width="200">
+        </div>
+        <p-divider></p-divider>
+
+        <div class="w-full  flex flex-column justify-content-between align-content-between">
+          <div class="mb-3 detailContainer">
+            <div class="flex justify-content-between text-lg font-bold mb-1">
+              <div> {{ item.productName }} </div>
+              <i class="pi pi-heart" style="font-size: 1.5rem;"></i>
+            </div>
+            <div class="text-gray-500">ราคา {{item.price }} บาท</div>
+          </div>
+
+          <p-divider></p-divider>
+        </div>
+
+        <button pButton class="p-button-secondary p-button-sm w-full flex al" label="View Detail"
+          (click)="viewDetail(item.id)">
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</app-sidebar>

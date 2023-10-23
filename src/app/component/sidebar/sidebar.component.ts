@@ -33,6 +33,21 @@ export class SidebarComponent implements OnInit {
     if (this.user.role == 'CUSTOMER') {
       this.items = [
         {
+          label: 'Products',
+          items: [
+            {
+              label: 'Shopping Products',
+              icon: 'pi pi-cart-plus',
+              routerLink: ['/products'],
+            },
+            {
+              label: 'My Cart',
+              icon: 'pi pi-user',
+              routerLink: ['/cart'],
+            },
+          ],
+        },
+        {
           label: 'Customer',
           items: [
             {
